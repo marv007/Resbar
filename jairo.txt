@@ -1,6 +1,0 @@
-add
-reset
-commit
-pull
-push
-status
