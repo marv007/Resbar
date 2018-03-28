@@ -44,9 +44,12 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Detalle de Orden");
         setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(1024, 768));
+        setResizable(false);
+        getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
         jpnlPrincipal.setBackground(new java.awt.Color(212, 175, 55));
+        jpnlPrincipal.setMaximumSize(new java.awt.Dimension(1024, 768));
         jpnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jpnlFechaHora.setBackground(new java.awt.Color(212, 175, 55));
@@ -102,6 +105,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlTabla.setForeground(new java.awt.Color(218, 165, 32));
         jpnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,8 +148,10 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
         jpnlBotones.setBackground(new java.awt.Color(212, 175, 55));
 
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton1.setText("OK");
 
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setText("Regresar");
 
         javax.swing.GroupLayout jpnlBotonesLayout = new javax.swing.GroupLayout(jpnlBotones);
@@ -175,7 +181,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabel5.setText("Detalles de la Orden");
         jpnlPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
-        getContentPane().add(jpnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 530));
+        getContentPane().add(jpnlPrincipal);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,8 +217,12 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmDetalleOrden().setVisible(true);
+                
+                
             }
         });
+        
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
