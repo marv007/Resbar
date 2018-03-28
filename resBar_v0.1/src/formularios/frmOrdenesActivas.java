@@ -30,12 +30,12 @@ public class frmOrdenesActivas extends javax.swing.JFrame {
         lbIcon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        tbl_ordenesactivas = new javax.swing.JTable();
+        btn_modificar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        btn_regresar = new javax.swing.JButton();
+        btn_nuevaorden = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         lbIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/763626.png"))); // NOI18N
 
@@ -43,19 +43,18 @@ public class frmOrdenesActivas extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 107, 135));
         setMinimumSize(new java.awt.Dimension(510, 375));
         setName("Ordenes Activas"); // NOI18N
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 204, 102));
         jLabel1.setText("Ordenes Activas");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(150, 10, 200, 40);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 200, 40));
 
         jScrollPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(42, 49, 50));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_ordenesactivas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbl_ordenesactivas.setForeground(new java.awt.Color(42, 49, 50));
+        tbl_ordenesactivas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -87,47 +86,41 @@ public class frmOrdenesActivas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(118, 38, 54));
-        jScrollPane2.setViewportView(jTable1);
+        tbl_ordenesactivas.setGridColor(new java.awt.Color(118, 38, 54));
+        jScrollPane2.setViewportView(tbl_ordenesactivas);
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(30, 80, 440, 190);
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 440, 190));
 
-        jButton2.setBackground(new java.awt.Color(42, 49, 50));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Modificar");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jButton2);
-        jButton2.setBounds(160, 290, 100, 30);
+        btn_modificar.setBackground(new java.awt.Color(0, 0, 0));
+        btn_modificar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_modificar.setForeground(new java.awt.Color(255, 204, 102));
+        btn_modificar.setText("Modificar");
+        btn_modificar.setBorder(null);
+        getContentPane().add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 100, 30));
 
-        jButton3.setBackground(new java.awt.Color(42, 49, 50));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Eliminar");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jButton3);
-        jButton3.setBounds(370, 290, 90, 30);
+        btn_eliminar.setBackground(new java.awt.Color(0, 0, 0));
+        btn_eliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_eliminar.setForeground(new java.awt.Color(255, 204, 102));
+        btn_eliminar.setText("Eliminar");
+        btn_eliminar.setBorder(null);
+        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 90, 30));
 
-        jButton4.setBackground(new java.awt.Color(42, 49, 50));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Regresar");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jButton4);
-        jButton4.setBounds(270, 290, 90, 30);
+        btn_regresar.setBackground(new java.awt.Color(0, 0, 0));
+        btn_regresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_regresar.setForeground(new java.awt.Color(255, 204, 102));
+        btn_regresar.setText("Regresar");
+        btn_regresar.setBorder(null);
+        getContentPane().add(btn_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 90, 30));
 
-        jButton1.setBackground(new java.awt.Color(42, 49, 50));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Nueva Orden");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jButton1);
-        jButton1.setBounds(40, 290, 110, 30);
+        btn_nuevaorden.setBackground(new java.awt.Color(0, 0, 0));
+        btn_nuevaorden.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btn_nuevaorden.setForeground(new java.awt.Color(255, 204, 102));
+        btn_nuevaorden.setText("Nueva Orden");
+        btn_nuevaorden.setBorder(null);
+        getContentPane().add(btn_nuevaorden, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 110, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/763626.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 510, 380);
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -169,14 +162,14 @@ public class frmOrdenesActivas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_modificar;
+    private javax.swing.JButton btn_nuevaorden;
+    private javax.swing.JButton btn_regresar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbIcon;
+    private javax.swing.JTable tbl_ordenesactivas;
     // End of variables declaration//GEN-END:variables
 }
