@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -31,6 +33,11 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         //hora del sistema
         Timer tiempo= new Timer(100,new frmDetalleOrden.horas());
         tiempo.start();
+        
+        this.TamañoPosicionCeldas();
+        
+       // this.BotonesInvisibles();
+
         
     }
 
@@ -53,6 +60,30 @@ public class frmDetalleOrden extends javax.swing.JFrame {
          }
         
     }
+    
+    
+    public void TamañoPosicionCeldas(){
+        tblDetalleOrden.getColumnModel().getColumn(0).setPreferredWidth(240);
+        tblDetalleOrden.getColumnModel().getColumn(1).setPreferredWidth(5);
+        
+       DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+       tcr.setHorizontalAlignment(SwingConstants.CENTER);
+       tblDetalleOrden.getColumnModel().getColumn(1).setCellRenderer(tcr);
+}
+    public void BotonesInvisibles(){
+        int fila = tblDetalleOrden.getSelectedRow();
+        
+        if (fila>=0){
+            this.btnMas.setVisible(true);
+            this.btnMenos.setVisible(true);
+        }else{
+            this.btnMas.setVisible(false);
+            this.btnMenos.setVisible(false);
+        }
+            
+    }
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,12 +105,17 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDetalleOrden = new javax.swing.JTable();
         jpnlBotones1 = new javax.swing.JPanel();
+        jpnlBotonesCantidad = new javax.swing.JPanel();
+        btnMas = new javax.swing.JButton();
+        btnMenos = new javax.swing.JButton();
+        jLabelCantidad = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(490, 500));
-        setResizable(false);
+        setMaximumSize(new java.awt.Dimension(1024, 768));
+        setMinimumSize(new java.awt.Dimension(1024, 768));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(null);
 
         jpnlPrincipal.setBackground(new java.awt.Color(212, 175, 55));
@@ -88,84 +124,50 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlPrincipal.setLayout(null);
 
         jpnlTitulo.setBackground(new java.awt.Color(212, 175, 55));
+        jpnlTitulo.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel1.setText("Detalle de Orden");
-
-        javax.swing.GroupLayout jpnlTituloLayout = new javax.swing.GroupLayout(jpnlTitulo);
-        jpnlTitulo.setLayout(jpnlTituloLayout);
-        jpnlTituloLayout.setHorizontalGroup(
-            jpnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlTituloLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1)
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
-        jpnlTituloLayout.setVerticalGroup(
-            jpnlTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlTituloLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
+        jpnlTitulo.add(jLabel1);
+        jLabel1.setBounds(290, 10, 390, 80);
 
         jpnlPrincipal.add(jpnlTitulo);
-        jpnlTitulo.setBounds(30, 10, 0, 30);
+        jpnlTitulo.setBounds(37, 20, 970, 90);
 
         jpnlHoraFecha.setBackground(new java.awt.Color(212, 175, 55));
         jpnlHoraFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnlHoraFecha.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("Fecha:");
+        jpnlHoraFecha.add(jLabel2);
+        jLabel2.setBounds(10, 10, 70, 40);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setText("Hora:");
+        jpnlHoraFecha.add(jLabel3);
+        jLabel3.setBounds(400, 15, 62, 30);
 
         txtFecha.setBackground(new java.awt.Color(212, 175, 55));
-        txtFecha.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtFecha.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtFecha.setBorder(null);
+        jpnlHoraFecha.add(txtFecha);
+        txtFecha.setBounds(90, 20, 200, 20);
 
         txtHora.setBackground(new java.awt.Color(212, 175, 55));
-        txtHora.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtHora.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtHora.setBorder(null);
-
-        javax.swing.GroupLayout jpnlHoraFechaLayout = new javax.swing.GroupLayout(jpnlHoraFecha);
-        jpnlHoraFecha.setLayout(jpnlHoraFechaLayout);
-        jpnlHoraFechaLayout.setHorizontalGroup(
-            jpnlHoraFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlHoraFechaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnlHoraFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnlHoraFechaLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpnlHoraFechaLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(227, Short.MAX_VALUE))
-        );
-        jpnlHoraFechaLayout.setVerticalGroup(
-            jpnlHoraFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlHoraFechaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnlHoraFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpnlHoraFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jpnlHoraFecha.add(txtHora);
+        txtHora.setBounds(470, 20, 200, 20);
 
         jpnlPrincipal.add(jpnlHoraFecha);
-        jpnlHoraFecha.setBounds(30, 50, 390, 50);
+        jpnlHoraFecha.setBounds(30, 170, 750, 50);
 
         jpnlTabla.setBackground(new java.awt.Color(212, 175, 55));
         jpnlTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnlTabla.setLayout(null);
 
-        tblDetalleOrden.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        tblDetalleOrden.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -191,47 +193,56 @@ public class frmDetalleOrden extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tblDetalleOrden.setRowHeight(25);
+        tblDetalleOrden.setRowHeight(40);
+        tblDetalleOrden.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(tblDetalleOrden);
 
-        javax.swing.GroupLayout jpnlTablaLayout = new javax.swing.GroupLayout(jpnlTabla);
-        jpnlTabla.setLayout(jpnlTablaLayout);
-        jpnlTablaLayout.setHorizontalGroup(
-            jpnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlTablaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jpnlTablaLayout.setVerticalGroup(
-            jpnlTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnlTablaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jpnlTabla.add(jScrollPane1);
+        jScrollPane1.setBounds(11, 12, 730, 430);
 
         jpnlPrincipal.add(jpnlTabla);
-        jpnlTabla.setBounds(30, 110, 390, 300);
+        jpnlTabla.setBounds(30, 250, 750, 460);
 
         jpnlBotones1.setBackground(new java.awt.Color(212, 175, 55));
         jpnlBotones1.setLayout(null);
-
-        btnRegresar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnRegresar.setText("Regresar");
-        jpnlBotones1.add(btnRegresar);
-        btnRegresar.setBounds(310, 10, 79, 23);
-
-        btnOk.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnOk.setText("Ok");
-        jpnlBotones1.add(btnOk);
-        btnOk.setBounds(220, 10, 79, 23);
-
         jpnlPrincipal.add(jpnlBotones1);
         jpnlBotones1.setBounds(30, 420, 390, 50);
 
+        jpnlBotonesCantidad.setBackground(new java.awt.Color(212, 175, 55));
+        jpnlBotonesCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnlBotonesCantidad.setLayout(null);
+
+        btnMas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnMas.setText("+");
+        jpnlBotonesCantidad.add(btnMas);
+        btnMas.setBounds(130, 10, 50, 56);
+
+        btnMenos.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnMenos.setText("-");
+        jpnlBotonesCantidad.add(btnMenos);
+        btnMenos.setBounds(10, 10, 50, 56);
+
+        jLabelCantidad.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabelCantidad.setText("1");
+        jLabelCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnlBotonesCantidad.add(jLabelCantidad);
+        jLabelCantidad.setBounds(70, 10, 50, 56);
+
+        jpnlPrincipal.add(jpnlBotonesCantidad);
+        jpnlBotonesCantidad.setBounds(800, 250, 190, 80);
+
+        btnRegresar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnRegresar.setText("Regresar");
+        jpnlPrincipal.add(btnRegresar);
+        btnRegresar.setBounds(840, 580, 130, 60);
+
+        btnOk.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnOk.setText("Ok");
+        jpnlPrincipal.add(btnOk);
+        btnOk.setBounds(840, 440, 130, 60);
+
         getContentPane().add(jpnlPrincipal);
-        jpnlPrincipal.setBounds(0, 0, 570, 560);
+        jpnlPrincipal.setBounds(0, 0, 1050, 790);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -274,13 +285,17 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMas;
+    private javax.swing.JButton btnMenos;
     private javax.swing.JButton btnOk;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelCantidad;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpnlBotones1;
+    private javax.swing.JPanel jpnlBotonesCantidad;
     private javax.swing.JPanel jpnlHoraFecha;
     private javax.swing.JPanel jpnlPrincipal;
     private javax.swing.JPanel jpnlTabla;
