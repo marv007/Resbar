@@ -20,6 +20,7 @@ public class ResBar_v01 {
     public static void main(String[] args) {
         frmInicio v = new frmInicio();
         v.setVisible(true);
+        v.setLocationRelativeTo(null);
     }
 
 }
