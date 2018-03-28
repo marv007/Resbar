@@ -1,0 +1,30 @@
+[33mcommit 03cfe652558d5a06b044b112b71a065daca18b9c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: FranciscoBelloso <franciscobelloso2@gmail.com>
+Date:   Sat Mar 24 17:12:34 2018 -0600
+
+    Prueba Francisco
+
+[33mcommit 7499514c8f0753da2dad6d2a99b45b263d27e7e1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: fe930c9 3e6272f
+Author: marv007 <marvintorres2013@gmail.com>
+Date:   Sat Mar 24 16:35:26 2018 -0600
+
+    Merge branch 'master' of https://github.com/marv007/Resbar
+
+[33mcommit fe930c916147825493b633ca36556098d98cb8f1[m
+Author: marv007 <marvintorres2013@gmail.com>
+Date:   Sat Mar 24 16:31:03 2018 -0600
+
+    version 0.1
+
+[33mcommit 3e6272ff8fc79258a9476329b374ffc3eded4644[m
+Author: marv007 <marvintorres2013@gmail.com>
+Date:   Sat Mar 24 16:26:58 2018 -0600
+
+    Delete README.md
+
+[33mcommit 1c2f224a51ed5cb6c0e73a95ac2fbdf73e878553[m
+Author: marv007 <marvintorres2013@gmail.com>
+Date:   Sat Mar 24 16:18:02 2018 -0600
+
+    Create README.md
