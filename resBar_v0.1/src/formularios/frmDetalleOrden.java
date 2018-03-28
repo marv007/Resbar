@@ -16,6 +16,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
      */
     public frmDetalleOrden() {
         initComponents();
+        tblDetalle.getColumnModel().getColumn(0).setPreferredWidth(150);
+        tblDetalle.getColumnModel().getColumn(1).setPreferredWidth(5);
     }
 
     /**
@@ -35,7 +37,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jpnlTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDetalle = new javax.swing.JTable();
         jpnlBotones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -105,9 +107,14 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlTabla.setForeground(new java.awt.Color(218, 165, 32));
         jpnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+<<<<<<< HEAD
         jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
+=======
+        tblDetalle.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        tblDetalle.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> d68ca952784a433fd261e46ac8cc4fb5ce4cdf7b
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -139,8 +146,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jScrollPane1.setViewportView(jTable1);
+        tblDetalle.setRowHeight(30);
+        jScrollPane1.setViewportView(tblDetalle);
 
         jpnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 394, 328));
 
@@ -163,7 +170,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnlBotonesLayout.setVerticalGroup(
             jpnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,10 +241,10 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel jpnlBotones;
     private javax.swing.JPanel jpnlFechaHora;
     private javax.swing.JPanel jpnlPrincipal;
     private javax.swing.JPanel jpnlTabla;
+    private javax.swing.JTable tblDetalle;
     // End of variables declaration//GEN-END:variables
 }
