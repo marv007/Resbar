@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -91,6 +92,8 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nueva Orden | Resbar v0.1");
+        setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
         setResizable(false);
         setSize(new java.awt.Dimension(1024, 768));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -108,6 +111,11 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jButton2.setText("Enviar Orden");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         lblFecha.setFont(lblFecha.getFont().deriveFont(lblFecha.getFont().getSize()+9f));
         lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -295,9 +303,13 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        frmDashboard v = new frmDashboard();
-        v.setVisible(true);
+        new frmDashboard().setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new frmDashboard().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
