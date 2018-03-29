@@ -5,13 +5,8 @@
  */
 package formularios;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
@@ -26,49 +21,30 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     public frmDetalleOrden() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        //fecha del sistema
-        this.txtFecha.setText(FechaSistema());
-        
-        //hora del sistema
-        Timer tiempo= new Timer(100,new frmDetalleOrden.horas());
-        tiempo.start();
-        
-        this.TamañoPosicionCeldas();
-        
-       // this.BotonesInvisibles();
 
+        
+       this.TamañoPosicionCeldas();
+ 
+       // this.BotonesInvisibles()
         
     }
 
-    public static String FechaSistema(){
-       Date fecha= new Date();
-       SimpleDateFormat formatoFecha=new SimpleDateFormat("dd/MM/YYYY");
-       return formatoFecha.format(fecha);
-    }
     
-    class horas implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-            Date HoraSis = new Date();
-            String AmPm="hh:mm:ss a";
-            SimpleDateFormat format=new SimpleDateFormat(AmPm);
-            Calendar hoy=Calendar.getInstance();
-            txtHora.setText(String.format(format.format(HoraSis),hoy));
-            
-         }
+    
+   
         
-    }
+
     
     
     public void TamañoPosicionCeldas(){
-        tblDetalleOrden.getColumnModel().getColumn(0).setPreferredWidth(240);
+        tblDetalleOrden.getColumnModel().getColumn(0).setPreferredWidth(150);
         tblDetalleOrden.getColumnModel().getColumn(1).setPreferredWidth(5);
+        tblDetalleOrden.getColumnModel().getColumn(2).setPreferredWidth(5);
         
        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
        tcr.setHorizontalAlignment(SwingConstants.CENTER);
        tblDetalleOrden.getColumnModel().getColumn(1).setCellRenderer(tcr);
+       tblDetalleOrden.getColumnModel().getColumn(2).setCellRenderer(tcr);
 }
     public void BotonesInvisibles(){
         int fila = tblDetalleOrden.getSelectedRow();
@@ -97,20 +73,21 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlTitulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jpnlHoraFecha = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        txtHora = new javax.swing.JTextField();
+        jlabelBuscar = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jpnlTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDetalleOrden = new javax.swing.JTable();
-        jpnlBotones1 = new javax.swing.JPanel();
         jpnlBotonesCantidad = new javax.swing.JPanel();
         btnMas = new javax.swing.JButton();
         btnMenos = new javax.swing.JButton();
         jLabelCantidad = new javax.swing.JLabel();
-        btnRegresar = new javax.swing.JButton();
         btnOk = new javax.swing.JButton();
+        jpnlMenus = new javax.swing.JPanel();
+        btnEntradas = new javax.swing.JButton();
+        btnBocas = new javax.swing.JButton();
+        btnSopas = new javax.swing.JButton();
+        btnBebidas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 768));
@@ -135,58 +112,43 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlTitulo.setBounds(37, 20, 970, 90);
 
         jpnlHoraFecha.setBackground(new java.awt.Color(212, 175, 55));
-        jpnlHoraFecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnlHoraFecha.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setText("Fecha:");
-        jpnlHoraFecha.add(jLabel2);
-        jLabel2.setBounds(10, 10, 70, 40);
+        jlabelBuscar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jlabelBuscar.setText("Buscar:");
+        jpnlHoraFecha.add(jlabelBuscar);
+        jlabelBuscar.setBounds(10, 0, 90, 40);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setText("Hora:");
-        jpnlHoraFecha.add(jLabel3);
-        jLabel3.setBounds(400, 15, 62, 30);
-
-        txtFecha.setBackground(new java.awt.Color(212, 175, 55));
-        txtFecha.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtFecha.setBorder(null);
-        jpnlHoraFecha.add(txtFecha);
-        txtFecha.setBounds(90, 20, 200, 20);
-
-        txtHora.setBackground(new java.awt.Color(212, 175, 55));
-        txtHora.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        txtHora.setBorder(null);
-        jpnlHoraFecha.add(txtHora);
-        txtHora.setBounds(470, 20, 200, 20);
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jpnlHoraFecha.add(jTextField1);
+        jTextField1.setBounds(90, 0, 250, 30);
 
         jpnlPrincipal.add(jpnlHoraFecha);
-        jpnlHoraFecha.setBounds(30, 170, 750, 50);
+        jpnlHoraFecha.setBounds(30, 140, 400, 40);
 
         jpnlTabla.setBackground(new java.awt.Color(212, 175, 55));
-        jpnlTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnlTabla.setLayout(null);
 
         tblDetalleOrden.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Producto", "Cantidad"
+                "Nombre", "Precio", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -198,32 +160,25 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblDetalleOrden);
 
         jpnlTabla.add(jScrollPane1);
-        jScrollPane1.setBounds(11, 12, 730, 430);
+        jScrollPane1.setBounds(0, 0, 490, 430);
 
         jpnlPrincipal.add(jpnlTabla);
-        jpnlTabla.setBounds(30, 250, 750, 460);
-
-        jpnlBotones1.setBackground(new java.awt.Color(212, 175, 55));
-        jpnlBotones1.setLayout(null);
-        jpnlPrincipal.add(jpnlBotones1);
-        jpnlBotones1.setBounds(30, 420, 390, 50);
+        jpnlTabla.setBounds(290, 210, 490, 460);
 
         jpnlBotonesCantidad.setBackground(new java.awt.Color(212, 175, 55));
-        jpnlBotonesCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnlBotonesCantidad.setLayout(null);
 
         btnMas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnMas.setText("+");
         jpnlBotonesCantidad.add(btnMas);
-        btnMas.setBounds(130, 10, 50, 56);
+        btnMas.setBounds(120, 10, 50, 56);
 
         btnMenos.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnMenos.setText("-");
         jpnlBotonesCantidad.add(btnMenos);
-        btnMenos.setBounds(10, 10, 50, 56);
+        btnMenos.setBounds(20, 10, 50, 56);
 
         jLabelCantidad.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabelCantidad.setText("1");
         jLabelCantidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnlBotonesCantidad.add(jLabelCantidad);
         jLabelCantidad.setBounds(70, 10, 50, 56);
@@ -231,18 +186,39 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlPrincipal.add(jpnlBotonesCantidad);
         jpnlBotonesCantidad.setBounds(800, 250, 190, 80);
 
-        btnRegresar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnRegresar.setText("Regresar");
-        jpnlPrincipal.add(btnRegresar);
-        btnRegresar.setBounds(840, 580, 130, 60);
-
         btnOk.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnOk.setText("Ok");
         jpnlPrincipal.add(btnOk);
-        btnOk.setBounds(840, 440, 130, 60);
+        btnOk.setBounds(800, 500, 190, 80);
+
+        jpnlMenus.setBackground(new java.awt.Color(212, 175, 55));
+        jpnlMenus.setLayout(null);
+
+        btnEntradas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnEntradas.setText("Entradas");
+        jpnlMenus.add(btnEntradas);
+        btnEntradas.setBounds(10, 10, 190, 80);
+
+        btnBocas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnBocas.setText("Bocas");
+        jpnlMenus.add(btnBocas);
+        btnBocas.setBounds(10, 130, 190, 80);
+
+        btnSopas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnSopas.setText("Sopas");
+        jpnlMenus.add(btnSopas);
+        btnSopas.setBounds(10, 240, 190, 80);
+
+        btnBebidas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnBebidas.setText("Bebidas");
+        jpnlMenus.add(btnBebidas);
+        btnBebidas.setBounds(10, 350, 190, 80);
+
+        jpnlPrincipal.add(jpnlMenus);
+        jpnlMenus.setBounds(40, 210, 210, 460);
 
         getContentPane().add(jpnlPrincipal);
-        jpnlPrincipal.setBounds(0, 0, 1050, 790);
+        jpnlPrincipal.setBounds(0, 10, 1050, 790);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -285,23 +261,24 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBebidas;
+    private javax.swing.JButton btnBocas;
+    private javax.swing.JButton btnEntradas;
     private javax.swing.JButton btnMas;
     private javax.swing.JButton btnMenos;
     private javax.swing.JButton btnOk;
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSopas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCantidad;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel jpnlBotones1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jlabelBuscar;
     private javax.swing.JPanel jpnlBotonesCantidad;
     private javax.swing.JPanel jpnlHoraFecha;
+    private javax.swing.JPanel jpnlMenus;
     private javax.swing.JPanel jpnlPrincipal;
     private javax.swing.JPanel jpnlTabla;
     private javax.swing.JPanel jpnlTitulo;
     private javax.swing.JTable tblDetalleOrden;
-    private javax.swing.JTextField txtFecha;
-    private javax.swing.JTextField txtHora;
     // End of variables declaration//GEN-END:variables
 }
