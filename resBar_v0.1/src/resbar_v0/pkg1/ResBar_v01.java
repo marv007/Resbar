@@ -6,7 +6,9 @@
 
 package resbar_v0.pkg1;
 
-import formularios.frmInicio;
+import formularios.frmDashboard;
+
+
 
 /**
  *
@@ -18,7 +20,7 @@ public class ResBar_v01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        frmInicio v = new frmInicio();
+        frmDashboard v = new frmDashboard();
         v.setVisible(true);
         v.setLocationRelativeTo(null);
     }
