@@ -90,9 +90,14 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(1024, 768));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(169, 119, 74));
@@ -288,6 +293,11 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        frmDashboard v = new frmDashboard();
+        v.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
