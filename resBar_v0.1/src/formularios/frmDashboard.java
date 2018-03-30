@@ -168,6 +168,9 @@ public class frmDashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblOrdenesMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblOrdenesMouseEntered(evt);
+            }
         });
         jScrollPane1.setViewportView(tblOrdenes);
 
@@ -362,11 +365,17 @@ public class frmDashboard extends javax.swing.JFrame {
        jppMenu.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseEntered
 
+<<<<<<< HEAD
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        frmActualizarMenu actualizar = new frmActualizarMenu();
        actualizar.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+=======
+    private void tblOrdenesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdenesMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblOrdenesMouseEntered
+>>>>>>> 7d65fec1ed286667b7b0b27243f29cf6713cca0a
 
     
         
