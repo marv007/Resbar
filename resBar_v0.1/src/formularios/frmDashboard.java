@@ -168,6 +168,9 @@ public class frmDashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblOrdenesMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tblOrdenesMouseEntered(evt);
+            }
         });
         jScrollPane1.setViewportView(tblOrdenes);
 
@@ -356,6 +359,10 @@ public class frmDashboard extends javax.swing.JFrame {
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
        jppMenu.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void tblOrdenesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdenesMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblOrdenesMouseEntered
 
     
         

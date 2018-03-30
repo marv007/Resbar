@@ -102,7 +102,6 @@ public class AgregarProducto extends javax.swing.JFrame {
 
         btnBoton.setBackground(new java.awt.Color(255, 141, 63));
         btnBoton.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        btnBoton.setForeground(new java.awt.Color(0, 0, 0));
         btnBoton.setText("OK");
         btnBoton.setPreferredSize(new java.awt.Dimension(120, 94));
         btnBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +156,11 @@ public class AgregarProducto extends javax.swing.JFrame {
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setPreferredSize(new java.awt.Dimension(150, 94));
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         pnAgregarP.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 90));
 
         getContentPane().add(pnAgregarP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 530));
@@ -196,6 +200,10 @@ public class AgregarProducto extends javax.swing.JFrame {
             modelo.setValueAt(cuenta2, tblAñadirProductos.getSelectedRow(),1);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

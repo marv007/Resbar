@@ -300,6 +300,8 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        frmDetalleOrden detalleOrden = new frmDetalleOrden();
+        detalleOrden.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing

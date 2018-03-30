@@ -164,7 +164,6 @@ public class ordenes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblOrdenes);
 
         lblOrdenes.setFont(new java.awt.Font("Keter YG", 1, 30)); // NOI18N
-        lblOrdenes.setForeground(new java.awt.Color(0, 0, 0));
         lblOrdenes.setText("Ordenes");
 
         javax.swing.GroupLayout pnPane1Layout = new javax.swing.GroupLayout(pnPane1);
@@ -193,7 +192,6 @@ public class ordenes extends javax.swing.JFrame {
 
         btnMenu.setBackground(new java.awt.Color(255, 141, 63));
         btnMenu.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btnMenu.setForeground(new java.awt.Color(0, 0, 0));
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/menu.png"))); // NOI18N
         btnMenu.setText("Menú");
         btnMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
@@ -207,7 +205,6 @@ public class ordenes extends javax.swing.JFrame {
         });
 
         btnNuevaOrden.setBackground(new java.awt.Color(255, 141, 63));
-        btnNuevaOrden.setForeground(new java.awt.Color(0, 0, 0));
         btnNuevaOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nuevo.png"))); // NOI18N
         btnNuevaOrden.setText("Nueva Orden");
         btnNuevaOrden.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
@@ -221,7 +218,6 @@ public class ordenes extends javax.swing.JFrame {
         });
 
         btnConfigMenu.setBackground(new java.awt.Color(255, 141, 63));
-        btnConfigMenu.setForeground(new java.awt.Color(0, 0, 0));
         btnConfigMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/configuracion.png"))); // NOI18N
         btnConfigMenu.setText("Confugurar Menú");
         btnConfigMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
@@ -236,7 +232,6 @@ public class ordenes extends javax.swing.JFrame {
 
         btnInicio.setBackground(new java.awt.Color(255, 141, 63));
         btnInicio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        btnInicio.setForeground(new java.awt.Color(0, 0, 0));
         btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Inicio.png"))); // NOI18N
         btnInicio.setText("Inicio");
         btnInicio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 153), 1, true));
@@ -306,6 +301,7 @@ public class ordenes extends javax.swing.JFrame {
          }else{
         jppMenu.setVisible(true);
         jppMenu.setLocation(evt.getLocationOnScreen());
+       
          }
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
