@@ -291,7 +291,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblOrdenesMouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblOrdenesMouseEntered"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="tblOrdenes.getTableHeader().setBackground(new java.awt.Color(0, 0, 0));"/>
@@ -340,9 +339,6 @@
                 <Property name="label" type="java.lang.String" value="Admin Men&#xfa;"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>

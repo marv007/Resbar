@@ -168,9 +168,6 @@ public class frmDashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblOrdenesMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tblOrdenesMouseEntered(evt);
-            }
         });
         jScrollPane1.setViewportView(tblOrdenes);
 
@@ -194,11 +191,6 @@ public class frmDashboard extends javax.swing.JFrame {
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setLabel("Admin Menú");
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
         jLabel3.setText("Resbar");
@@ -364,18 +356,6 @@ public class frmDashboard extends javax.swing.JFrame {
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
        jppMenu.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseEntered
-
-<<<<<<< HEAD
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       frmActualizarMenu actualizar = new frmActualizarMenu();
-       actualizar.setVisible(true);
-       this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
-=======
-    private void tblOrdenesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdenesMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblOrdenesMouseEntered
->>>>>>> 7d65fec1ed286667b7b0b27243f29cf6713cca0a
 
     
         

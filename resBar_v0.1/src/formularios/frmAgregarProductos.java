@@ -53,7 +53,6 @@ public class frmAgregarProductos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Agregar Productos");
-        setPreferredSize(new java.awt.Dimension(400, 500));
 
         pnFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 0)));
         pnFondo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -70,15 +69,12 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Fawn Script", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Resbar");
 
         jLabel3.setFont(new java.awt.Font("Fawn Script", 0, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Restaurante y Bar");
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Categoria:");
 
         jComboBox1.setBackground(new java.awt.Color(53, 60, 63));
@@ -87,19 +83,15 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entradas", "Carnes", "Pescados", "Postres", "Bebidas" }));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Producto:");
 
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Precio:");
 
         jTextField2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton1.setBackground(new java.awt.Color(53, 60, 63));
@@ -237,6 +229,7 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmAgregarProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

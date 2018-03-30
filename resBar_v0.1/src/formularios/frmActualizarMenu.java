@@ -98,7 +98,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Administrar Menú");
-        setPreferredSize(new java.awt.Dimension(1024, 768));
 
         jPanel1.setBackground(new java.awt.Color(117, 104, 103));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,7 +190,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Free Chancery", 1, 32)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Categoría:");
 
         javax.swing.GroupLayout pnPane1Layout = new javax.swing.GroupLayout(pnPane1);
@@ -258,7 +256,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbTabla);
 
         lblCabecera.setFont(new java.awt.Font("Forte", 0, 28)); // NOI18N
-        lblCabecera.setForeground(new java.awt.Color(0, 0, 0));
         lblCabecera.setText("Entradas");
 
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -316,20 +313,17 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jLabel2.setBounds(893, 10, 97, 110);
 
         jLabel3.setFont(new java.awt.Font("Fawn Script", 0, 72)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Resbar");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(730, 30, 160, 50);
 
         jLabel4.setFont(new java.awt.Font("Fawn Script", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Restaurante y Bar");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(730, 80, 170, 30);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Forte", 1, 40)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Administrar Menú");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(40, 30, 520, 60);
@@ -452,6 +446,10 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmActualizarMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
