@@ -151,6 +151,11 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlMenus.setBackground(new java.awt.Color(169, 119, 74));
         jpnlMenus.setComponentPopupMenu(jppMenu);
         jpnlMenus.setPreferredSize(new java.awt.Dimension(1024, 768));
+        jpnlMenus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jpnlMenusMouseEntered(evt);
+            }
+        });
         jpnlMenus.setLayout(null);
 
         btnEntradas.setBackground(new java.awt.Color(191, 169, 164));
@@ -329,6 +334,10 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jMenuItem2.setBackground(new java.awt.Color(169,119,74));
         jMenuItem2.setForeground(Color.black);
     }//GEN-LAST:event_jMenuItem2MouseExited
+
+    private void jpnlMenusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpnlMenusMouseEntered
+        this.jppMenu.setVisible(false);     
+    }//GEN-LAST:event_jpnlMenusMouseEntered
 
     /**
      * @param args the command line arguments
