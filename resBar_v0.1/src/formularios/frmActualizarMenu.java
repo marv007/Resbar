@@ -64,9 +64,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         ppItem1.setBackground(new java.awt.Color(53, 60, 63));
         ppItem1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
@@ -96,8 +96,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         ppMenuAct.add(ppItem2);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Resbar v0.1 Administrar Menú");
+        setPreferredSize(new java.awt.Dimension(1024, 768));
 
         jPanel1.setBackground(new java.awt.Color(117, 104, 103));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -312,21 +313,21 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(893, 10, 97, 110);
 
-        jLabel3.setFont(new java.awt.Font("Fawn Script", 0, 72)); // NOI18N
-        jLabel3.setText("Resbar");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(730, 30, 160, 50);
-
-        jLabel4.setFont(new java.awt.Font("Fawn Script", 1, 24)); // NOI18N
-        jLabel4.setText("Restaurante y Bar");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(730, 80, 170, 30);
-
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Forte", 1, 40)); // NOI18N
         jLabel5.setText("Administrar Menú");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(40, 30, 520, 60);
+
+        jLabel3.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
+        jLabel3.setText("Resbar");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(720, 10, 171, 82);
+
+        jLabel4.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
+        jLabel4.setText("Restaurante & Bar");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(710, 70, 184, 34);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -409,7 +410,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        frmDashboard board = new frmDashboard();
        board.setVisible(true);
-       this.setVisible(false);
+       this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
