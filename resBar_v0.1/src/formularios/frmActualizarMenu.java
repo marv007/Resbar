@@ -27,9 +27,22 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
      
-        miTabla();
-     pnPane1.setBackground(new Color(213,214,210));
-     pnPaneTabla.setBackground(new Color(213,214,210));
+     miTabla();
+     pnPane1.setBackground(new Color(0,0,0,100));
+     pnPaneTabla.setBackground(new Color(0,0,0,100));
+     lblLogo2.setForeground(Color.BLACK);
+     lblLogo3.setForeground(Color.BLACK);
+     lblEncabezado.setForeground(Color.BLACK);
+     
+     //Botones
+     btnEntradas.setForeground(Color.BLACK);
+     btnCarnes.setForeground(Color.BLACK);
+     btnPescados.setForeground(Color.BLACK);
+     btnPostres.setForeground(Color.BLACK);
+     btnBebidas.setForeground(Color.BLACK);
+     btnAñadir.setForeground(Color.BLACK);
+     btnOk.setForeground(Color.BLACK);
+     
        
      
     
@@ -48,8 +61,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         ppItem1 = new javax.swing.JMenuItem();
         ppItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAñadir = new javax.swing.JButton();
+        btnOk = new javax.swing.JButton();
         pnPane1 = new javax.swing.JPanel();
         btnEntradas = new javax.swing.JButton();
         btnCarnes = new javax.swing.JButton();
@@ -60,17 +73,16 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPaneTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbTabla = new javax.swing.JTable();
-        lblCabecera = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        lblCabecera = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblLogo2 = new javax.swing.JLabel();
+        lblLogo3 = new javax.swing.JLabel();
+        lblEncabezado = new javax.swing.JLabel();
 
-        ppItem1.setBackground(new java.awt.Color(53, 60, 63));
+        ppItem1.setBackground(new java.awt.Color(169, 119, 74));
         ppItem1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        ppItem1.setForeground(new java.awt.Color(255, 141, 63));
         ppItem1.setText("Editar Producto");
         ppItem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -82,9 +94,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         ppMenuAct.add(ppItem1);
 
-        ppItem2.setBackground(new java.awt.Color(53, 60, 63));
+        ppItem2.setBackground(new java.awt.Color(169, 119, 74));
         ppItem2.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
-        ppItem2.setForeground(new java.awt.Color(255, 141, 63));
         ppItem2.setText("Borrar Producto");
         ppItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -96,11 +107,12 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         ppMenuAct.add(ppItem2);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Administrar Menú");
         setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        jPanel1.setBackground(new java.awt.Color(117, 104, 103));
+        jPanel1.setBackground(new java.awt.Color(169, 119, 74));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 768));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel1MouseEntered(evt);
@@ -108,82 +120,83 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         jPanel1.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(43, 49, 50));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 141, 63));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Nuevo.png"))); // NOI18N
-        jButton1.setText("Añadir");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAñadir.setBackground(new java.awt.Color(243, 153, 0));
+        btnAñadir.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
+        btnAñadir.setText("Añadir");
+        btnAñadir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        btnAñadir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAñadir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAñadirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(327, 583, 170, 83);
+        jPanel1.add(btnAñadir);
+        btnAñadir.setBounds(330, 580, 110, 83);
 
-        jButton3.setBackground(new java.awt.Color(42, 49, 50));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 141, 63));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salida.png"))); // NOI18N
-        jButton3.setText("OK");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnOk.setBackground(new java.awt.Color(243, 153, 0));
+        btnOk.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
+        btnOk.setText("OK");
+        btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        btnOk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnOk.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnOkActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(848, 580, 140, 83);
+        jPanel1.add(btnOk);
+        btnOk.setBounds(880, 580, 110, 83);
 
         pnPane1.setBackground(new java.awt.Color(255, 255, 255));
-        pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
+        pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
 
-        btnEntradas.setBackground(new java.awt.Color(53, 60, 63));
+        btnEntradas.setBackground(new java.awt.Color(243, 153, 0));
         btnEntradas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnEntradas.setForeground(new java.awt.Color(255, 141, 63));
         btnEntradas.setText("Entradas");
-        btnEntradas.setBorder(null);
+        btnEntradas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnEntradas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntradasActionPerformed(evt);
             }
         });
 
-        btnCarnes.setBackground(new java.awt.Color(53, 60, 63));
+        btnCarnes.setBackground(new java.awt.Color(243, 153, 0));
         btnCarnes.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnCarnes.setForeground(new java.awt.Color(255, 141, 63));
         btnCarnes.setText("Carnes");
+        btnCarnes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnCarnes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCarnesActionPerformed(evt);
             }
         });
 
-        btnPescados.setBackground(new java.awt.Color(53, 60, 63));
+        btnPescados.setBackground(new java.awt.Color(243, 153, 0));
         btnPescados.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnPescados.setForeground(new java.awt.Color(255, 141, 63));
         btnPescados.setText("Pescados");
+        btnPescados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPescados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPescadosActionPerformed(evt);
             }
         });
 
-        btnPostres.setBackground(new java.awt.Color(53, 60, 63));
+        btnPostres.setBackground(new java.awt.Color(243, 153, 0));
         btnPostres.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnPostres.setForeground(new java.awt.Color(255, 141, 63));
         btnPostres.setText("Postres");
+        btnPostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPostres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPostresActionPerformed(evt);
             }
         });
 
-        btnBebidas.setBackground(new java.awt.Color(53, 60, 63));
+        btnBebidas.setBackground(new java.awt.Color(243, 153, 0));
         btnBebidas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnBebidas.setForeground(new java.awt.Color(255, 141, 63));
         btnBebidas.setText("Bebidas");
+        btnBebidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnBebidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBebidasActionPerformed(evt);
@@ -191,6 +204,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Free Chancery", 1, 32)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Categoría:");
 
         javax.swing.GroupLayout pnPane1Layout = new javax.swing.GroupLayout(pnPane1);
@@ -216,7 +230,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             .addGroup(pnPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(btnEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCarnes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,7 +246,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jPanel1.add(pnPane1);
         pnPane1.setBounds(30, 140, 290, 420);
 
-        pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
 
         tbTabla.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         tbTabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -243,6 +257,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
             }
         ));
+        tbTabla.setSelectionBackground(new java.awt.Color(153, 153, 153));
         tbTabla.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbTablaMouseClicked(evt);
@@ -255,9 +270,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbTabla);
-
-        lblCabecera.setFont(new java.awt.Font("Forte", 0, 28)); // NOI18N
-        lblCabecera.setText("Entradas");
 
         jTextField1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jTextField1.setText("Buscar Entradas...");
@@ -273,6 +285,10 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
+        lblCabecera.setFont(new java.awt.Font("Aharoni", 1, 24)); // NOI18N
+        lblCabecera.setForeground(new java.awt.Color(255, 255, 255));
+        lblCabecera.setText("Entradas");
+
         javax.swing.GroupLayout pnPaneTablaLayout = new javax.swing.GroupLayout(pnPaneTabla);
         pnPaneTabla.setLayout(pnPaneTablaLayout);
         pnPaneTablaLayout.setHorizontalGroup(
@@ -282,12 +298,12 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                 .addGroup(pnPaneTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnPaneTablaLayout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnPaneTablaLayout.createSequentialGroup()
+                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnPaneTablaLayout.setVerticalGroup(
@@ -297,7 +313,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnPaneTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
@@ -313,34 +329,34 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(893, 10, 97, 110);
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Forte", 1, 40)); // NOI18N
-        jLabel5.setText("Administrar Menú");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(40, 30, 520, 60);
+        lblLogo2.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
+        lblLogo2.setText("Resbar");
+        jPanel1.add(lblLogo2);
+        lblLogo2.setBounds(700, 30, 190, 50);
 
-        jLabel3.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
-        jLabel3.setText("Resbar");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(720, 10, 171, 82);
+        lblLogo3.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
+        lblLogo3.setText("Restaurante y Bar");
+        jPanel1.add(lblLogo3);
+        lblLogo3.setBounds(690, 80, 210, 30);
 
-        jLabel4.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
-        jLabel4.setText("Restaurante & Bar");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(710, 70, 184, 34);
+        lblEncabezado.setBackground(new java.awt.Color(255, 255, 255));
+        lblEncabezado.setFont(new java.awt.Font("Forte", 1, 40)); // NOI18N
+        lblEncabezado.setText("Administrar Menú");
+        jPanel1.add(lblEncabezado);
+        lblEncabezado.setBounds(40, 30, 520, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1031, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
         );
+
+        jPanel1.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -363,8 +379,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseEntered
 
     private void ppItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseEntered
-        ppItem1.setBackground(new Color(213,214,210));
-         ppItem1.setForeground(Color.BLACK);
+        ppItem1.setBackground(Color.BLACK);
+         ppItem1.setForeground(new Color(169,119,74));
         
     }//GEN-LAST:event_ppItem1MouseEntered
 
@@ -373,18 +389,18 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_tbTablaMouseExited
 
     private void ppItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseExited
-          ppItem1.setBackground(new Color(53,60,63));
-         ppItem1.setForeground(new Color(255,141,63));
+          ppItem1.setBackground(new Color(169,119,74));
+         ppItem1.setForeground(Color.BLACK);
     }//GEN-LAST:event_ppItem1MouseExited
 
     private void ppItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem2MouseEntered
-        ppItem2.setBackground(new Color(213,214,210));
-         ppItem2.setForeground(Color.BLACK);
+        ppItem2.setBackground(Color.BLACK);
+         ppItem2.setForeground(new Color(169,119,74));
     }//GEN-LAST:event_ppItem2MouseEntered
 
     private void ppItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem2MouseExited
-         ppItem2.setBackground(new Color(53,60,63));
-         ppItem2.setForeground(new Color(255,141,63));
+         ppItem2.setBackground(new Color(169,119,74));
+         ppItem2.setForeground(Color.BLACK);
     }//GEN-LAST:event_ppItem2MouseExited
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
@@ -407,20 +423,20 @@ public class frmActualizarMenu extends javax.swing.JFrame {
        lblCabecera.setText("Bebidas");
     }//GEN-LAST:event_btnBebidasActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
        frmDashboard board = new frmDashboard();
        board.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+       this.setVisible(false);
+    }//GEN-LAST:event_btnOkActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
         frmAgregarProductos agregar = new frmAgregarProductos();
         agregar.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAñadirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -447,6 +463,14 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmActualizarMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -485,7 +509,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
        tbTabla.setDefaultEditor(Object.class, null);
        //Cambiar fuente a cabecera de tabla
        tbTabla.getTableHeader().setFont(new Font("Verdana", Font.BOLD, 20));
-       tbTabla.getTableHeader().setBackground(new Color(53, 60, 63));
+       tbTabla.getTableHeader().setBackground(Color.black);
        tbTabla.getTableHeader().setForeground(Color.WHITE);
        //Tamaño de columnas
        tbTabla.getColumnModel().getColumn(0).setPreferredWidth(150);
@@ -497,23 +521,23 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAñadir;
     private javax.swing.JButton btnBebidas;
     private javax.swing.JButton btnCarnes;
     private javax.swing.JButton btnEntradas;
+    private javax.swing.JButton btnOk;
     private javax.swing.JButton btnPescados;
     private javax.swing.JButton btnPostres;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCabecera;
+    private javax.swing.JLabel lblEncabezado;
+    private javax.swing.JLabel lblLogo2;
+    private javax.swing.JLabel lblLogo3;
     private javax.swing.JPanel pnPane1;
     private javax.swing.JPanel pnPaneTabla;
     private javax.swing.JMenuItem ppItem1;
