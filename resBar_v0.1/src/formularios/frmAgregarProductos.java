@@ -5,10 +5,9 @@
  */
 package formularios;
 
-import clases.TranslucentPanel;
+
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
-//import java.lang.annotation.Native;
 import javax.swing.ImageIcon;
 
 /**

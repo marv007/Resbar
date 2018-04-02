@@ -159,31 +159,31 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlMenus.setLayout(null);
 
         btnEntradas.setBackground(new java.awt.Color(191, 169, 164));
-        btnEntradas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnEntradas.setFont(btnEntradas.getFont().deriveFont(btnEntradas.getFont().getStyle() | java.awt.Font.BOLD, btnEntradas.getFont().getSize()+9));
         btnEntradas.setText("Entradas");
         jpnlMenus.add(btnEntradas);
         btnEntradas.setBounds(30, 200, 190, 80);
 
         btnBocas.setBackground(new java.awt.Color(191, 169, 164));
-        btnBocas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnBocas.setFont(btnBocas.getFont().deriveFont(btnBocas.getFont().getStyle() | java.awt.Font.BOLD, btnBocas.getFont().getSize()+9));
         btnBocas.setText("Bocas");
         jpnlMenus.add(btnBocas);
         btnBocas.setBounds(30, 290, 190, 80);
 
         btnSopas.setBackground(new java.awt.Color(191, 169, 164));
-        btnSopas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnSopas.setFont(btnSopas.getFont().deriveFont(btnSopas.getFont().getStyle() | java.awt.Font.BOLD, btnSopas.getFont().getSize()+9));
         btnSopas.setText("Sopas");
         jpnlMenus.add(btnSopas);
         btnSopas.setBounds(30, 380, 190, 80);
 
         btnBebidas.setBackground(new java.awt.Color(191, 169, 164));
-        btnBebidas.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnBebidas.setFont(btnBebidas.getFont().deriveFont(btnBebidas.getFont().getStyle() | java.awt.Font.BOLD, btnBebidas.getFont().getSize()+9));
         btnBebidas.setText("Bebidas");
         jpnlMenus.add(btnBebidas);
         btnBebidas.setBounds(30, 470, 190, 80);
 
         tblDetalleOrden.setBackground(new java.awt.Color(153, 153, 255));
-        tblDetalleOrden.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getStyle() & ~java.awt.Font.BOLD, tblDetalleOrden.getFont().getSize()+9));
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -205,7 +205,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane1.setBounds(230, 200, 770, 350);
 
         btnOk.setBackground(new java.awt.Color(191, 169, 164));
-        btnOk.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnOk.setFont(btnOk.getFont().deriveFont(btnOk.getFont().getStyle() | java.awt.Font.BOLD, btnOk.getFont().getSize()+9));
         btnOk.setText("Ok");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
