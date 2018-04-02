@@ -5,6 +5,7 @@
  */
 package formularios;
 
+import clases.MiRender;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -26,6 +27,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
+        
+        tbTabla.setDefaultRenderer(Object.class, r);
      
      miTabla();
      pnPane1.setBackground(new Color(0,0,0,100));
@@ -47,6 +50,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      
     
     }
+    
+    MiRender r = new MiRender();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -248,7 +253,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
 
-        tbTabla.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        tbTabla.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         tbTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

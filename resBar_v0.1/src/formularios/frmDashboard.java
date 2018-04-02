@@ -5,6 +5,7 @@
  */
 package formularios;
 
+import clases.MiRender;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -25,11 +26,12 @@ public class frmDashboard extends javax.swing.JFrame {
      */
     public frmDashboard() {
         initComponents();
-        tabla();
-       // encabezadoTabla();
-        this.setLocationRelativeTo(null);
+        tabla();       
+        this.setLocationRelativeTo(null);        
+        tblOrdenes.setDefaultRenderer(Object.class, r);
     }
 
+    MiRender r = new MiRender();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -144,7 +146,7 @@ public class frmDashboard extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
-        tblOrdenes.setBackground(new java.awt.Color(243, 153, 0));
+        tblOrdenes.setBackground(new java.awt.Color(193, 157, 118));
         tblOrdenes.setFont(tblOrdenes.getFont().deriveFont(tblOrdenes.getFont().getSize()+9f));
         tblOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -309,13 +311,16 @@ public class frmDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblOrdenesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrdenesMouseClicked
-       
+         
+         
          if ((evt.getModifiers() & 4) !=0){
          jppMenu.setVisible(false);        
          }else{
         jppMenu.setVisible(true);
         jppMenu.setLocation(evt.getLocationOnScreen());
          }
+         
+         
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
     private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
@@ -457,9 +462,9 @@ public class frmDashboard extends javax.swing.JFrame {
        //Añadir modelo a tabla
        tblOrdenes.setModel(modelo);
        tblOrdenes.setRowHeight(40);
-       tblOrdenes.setDefaultEditor(Object.class, null);
+       //tblOrdenes.setDefaultEditor(Object.class, );
        //Cambiar fuente a cabecera de tabla
-       tblOrdenes.getTableHeader().setFont(new Font("", Font.BOLD, tblOrdenes.getFont().getSize()+9));
+       tblOrdenes.getTableHeader().setFont(new Font("", Font.BOLD, 20));
        tblOrdenes.getTableHeader().setBackground(Color.BLACK);
        tblOrdenes.getTableHeader().setForeground(Color.WHITE);
        //Tamaño de columnas

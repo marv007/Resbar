@@ -182,7 +182,6 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlMenus.add(btnBebidas);
         btnBebidas.setBounds(30, 470, 190, 80);
 
-        tblDetalleOrden.setBackground(new java.awt.Color(153, 153, 255));
         tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getStyle() & ~java.awt.Font.BOLD, tblDetalleOrden.getFont().getSize()+9));
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -192,6 +191,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
             }
         ));
+        tblDetalleOrden.setGridColor(new java.awt.Color(0, 0, 0));
         tblDetalleOrden.setRowHeight(40);
         tblDetalleOrden.setSelectionBackground(new java.awt.Color(0, 0, 0));
         tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
