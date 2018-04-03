@@ -29,6 +29,9 @@ public class frmDashboard extends javax.swing.JFrame {
         tabla();       
         this.setLocationRelativeTo(null);        
         tblOrdenes.setDefaultRenderer(Object.class, r);
+        jLabel3.setForeground(Color.BLACK);
+        jLabel4.setForeground(Color.BLACK);
+        jLabel2.setForeground(Color.BLACK);
     }
 
     MiRender r = new MiRender();
@@ -137,7 +140,7 @@ public class frmDashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel2.setBackground(new java.awt.Color(169, 119, 74));
+        jPanel2.setBackground(new java.awt.Color(154, 119, 50));
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel2MouseEntered(evt);
@@ -146,7 +149,7 @@ public class frmDashboard extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
-        tblOrdenes.setBackground(new java.awt.Color(193, 157, 118));
+        tblOrdenes.setBackground(new java.awt.Color(248, 227, 128));
         tblOrdenes.setFont(tblOrdenes.getFont().deriveFont(tblOrdenes.getFont().getSize()+9f));
         tblOrdenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -177,7 +180,7 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Forte", 1, 26)); // NOI18N
         jLabel2.setText("Ordenes Activas");
 
-        jButton2.setBackground(new java.awt.Color(243, 153, 0));
+        jButton2.setBackground(new java.awt.Color(245, 168, 12));
         jButton2.setFont(jButton2.getFont().deriveFont(jButton2.getFont().getStyle() | java.awt.Font.BOLD, jButton2.getFont().getSize()+1));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/new-file.png"))); // NOI18N
         jButton2.setText("Nueva Orden");
@@ -189,7 +192,7 @@ public class frmDashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(243, 153, 0));
+        jButton3.setBackground(new java.awt.Color(245, 168, 12));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/settings-three-gears-interface-symbol.png"))); // NOI18N
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -207,7 +210,8 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel4.setText("Restaurante & Bar");
 
-        jButton4.setBackground(new java.awt.Color(243, 153, 0));
+        jButton4.setBackground(new java.awt.Color(245, 168, 12));
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/grafico-de-lineas.png"))); // NOI18N
         jButton4.setText("Historial Ventas");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -274,10 +278,15 @@ public class frmDashboard extends javax.swing.JFrame {
         jTextField1.setFont(jTextField1.getFont().deriveFont(jTextField1.getFont().getSize()+9f));
         jTextField1.setText("Buscar...");
 
-        jButton1.setBackground(new java.awt.Color(243, 153, 0));
+        jButton1.setBackground(new java.awt.Color(245, 168, 12));
         jButton1.setFont(jButton1.getFont().deriveFont(jButton1.getFont().getSize()+9f));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/search.png"))); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(90, 31));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -286,7 +295,7 @@ public class frmDashboard extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(41, 41, 41)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -298,7 +307,7 @@ public class frmDashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,6 +407,10 @@ public class frmDashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
         
       
@@ -465,8 +478,8 @@ public class frmDashboard extends javax.swing.JFrame {
        //tblOrdenes.setDefaultEditor(Object.class, );
        //Cambiar fuente a cabecera de tabla
        tblOrdenes.getTableHeader().setFont(new Font("", Font.BOLD, 20));
+       tblOrdenes.getTableHeader().setForeground(new java.awt.Color(245,168,12));
        tblOrdenes.getTableHeader().setBackground(Color.BLACK);
-       tblOrdenes.getTableHeader().setForeground(Color.WHITE);
        //Tamaño de columnas
        tblOrdenes.getColumnModel().getColumn(0).setPreferredWidth(10);
        tblOrdenes.getColumnModel().getColumn(1).setPreferredWidth(5);
