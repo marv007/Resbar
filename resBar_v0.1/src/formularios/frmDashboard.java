@@ -478,8 +478,8 @@ public class frmDashboard extends javax.swing.JFrame {
        //tblOrdenes.setDefaultEditor(Object.class, );
        //Cambiar fuente a cabecera de tabla
        tblOrdenes.getTableHeader().setFont(new Font("", Font.BOLD, 20));
-       tblOrdenes.getTableHeader().setForeground(new java.awt.Color(245,168,12));
-       tblOrdenes.getTableHeader().setBackground(Color.BLACK);
+       tblOrdenes.getTableHeader().setBackground(new java.awt.Color(169,119,74));
+       tblOrdenes.getTableHeader().setForeground(Color.BLACK);
        //Tamaño de columnas
        tblOrdenes.getColumnModel().getColumn(0).setPreferredWidth(10);
        tblOrdenes.getColumnModel().getColumn(1).setPreferredWidth(5);
