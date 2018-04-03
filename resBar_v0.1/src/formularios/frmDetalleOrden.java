@@ -148,7 +148,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
             }
         });
 
-        jpnlMenus.setBackground(new java.awt.Color(169, 119, 74));
+        jpnlMenus.setBackground(new java.awt.Color(116, 85, 31));
         jpnlMenus.setComponentPopupMenu(jppMenu);
         jpnlMenus.setPreferredSize(new java.awt.Dimension(1024, 768));
         jpnlMenus.addMouseListener(new java.awt.event.MouseAdapter() {
