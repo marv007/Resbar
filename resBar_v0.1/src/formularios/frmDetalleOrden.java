@@ -22,6 +22,13 @@ public class frmDetalleOrden extends javax.swing.JFrame {
      */
     public frmDetalleOrden() {
         initComponents();
+        //COLORLETRA
+        jLabel2.setForeground(Color.BLACK);
+        jLabel3.setForeground(Color.BLACK);
+        jLabel5.setForeground(Color.BLACK);
+        jLabel6.setForeground(Color.BLACK);
+        
+        
         this.setLocationRelativeTo(null);
         this.TablaDetalleOrden();
  }
@@ -54,8 +61,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         
         //cambiar la fuente a la letra de la cabecera de la tabla
         this.tblDetalleOrden.getTableHeader().setFont(new Font("",Font.BOLD,20));
-       this.tblDetalleOrden.getTableHeader().setBackground(Color.BLACK);
-       this.tblDetalleOrden.getTableHeader().setForeground(Color.WHITE); 
+       this.tblDetalleOrden.getTableHeader().setBackground(new java.awt.Color(116,85,31));
+       this.tblDetalleOrden.getTableHeader().setForeground(Color.BLACK); 
        
        
        
@@ -158,30 +165,31 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         });
         jpnlMenus.setLayout(null);
 
-        btnEntradas.setBackground(new java.awt.Color(191, 169, 164));
+        btnEntradas.setBackground(new java.awt.Color(245, 168, 12));
         btnEntradas.setFont(btnEntradas.getFont().deriveFont(btnEntradas.getFont().getStyle() | java.awt.Font.BOLD, btnEntradas.getFont().getSize()+9));
         btnEntradas.setText("Entradas");
         jpnlMenus.add(btnEntradas);
         btnEntradas.setBounds(30, 200, 190, 80);
 
-        btnBocas.setBackground(new java.awt.Color(191, 169, 164));
+        btnBocas.setBackground(new java.awt.Color(245, 168, 12));
         btnBocas.setFont(btnBocas.getFont().deriveFont(btnBocas.getFont().getStyle() | java.awt.Font.BOLD, btnBocas.getFont().getSize()+9));
         btnBocas.setText("Bocas");
         jpnlMenus.add(btnBocas);
         btnBocas.setBounds(30, 290, 190, 80);
 
-        btnSopas.setBackground(new java.awt.Color(191, 169, 164));
+        btnSopas.setBackground(new java.awt.Color(245, 168, 12));
         btnSopas.setFont(btnSopas.getFont().deriveFont(btnSopas.getFont().getStyle() | java.awt.Font.BOLD, btnSopas.getFont().getSize()+9));
         btnSopas.setText("Sopas");
         jpnlMenus.add(btnSopas);
         btnSopas.setBounds(30, 380, 190, 80);
 
-        btnBebidas.setBackground(new java.awt.Color(191, 169, 164));
+        btnBebidas.setBackground(new java.awt.Color(245, 168, 12));
         btnBebidas.setFont(btnBebidas.getFont().deriveFont(btnBebidas.getFont().getStyle() | java.awt.Font.BOLD, btnBebidas.getFont().getSize()+9));
         btnBebidas.setText("Bebidas");
         jpnlMenus.add(btnBebidas);
         btnBebidas.setBounds(30, 470, 190, 80);
 
+        tblDetalleOrden.setBackground(new java.awt.Color(248, 227, 128));
         tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getStyle() & ~java.awt.Font.BOLD, tblDetalleOrden.getFont().getSize()+9));
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -193,7 +201,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         ));
         tblDetalleOrden.setGridColor(new java.awt.Color(0, 0, 0));
         tblDetalleOrden.setRowHeight(40);
-        tblDetalleOrden.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tblDetalleOrden.setSelectionBackground(new java.awt.Color(169, 119, 74));
+        tblDetalleOrden.setSelectionForeground(new java.awt.Color(255, 153, 51));
         tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDetalleOrdenMouseClicked(evt);
@@ -204,7 +213,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlMenus.add(jScrollPane1);
         jScrollPane1.setBounds(230, 200, 770, 350);
 
-        btnOk.setBackground(new java.awt.Color(191, 169, 164));
+        btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(btnOk.getFont().deriveFont(btnOk.getFont().getStyle() | java.awt.Font.BOLD, btnOk.getFont().getSize()+9));
         btnOk.setText("Ok");
         btnOk.addActionListener(new java.awt.event.ActionListener() {

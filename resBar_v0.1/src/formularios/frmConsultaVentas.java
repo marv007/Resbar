@@ -19,10 +19,16 @@ public class frmConsultaVentas extends javax.swing.JFrame {
      */
     public frmConsultaVentas() {
         initComponents();
+        //COLORLETRA
+        jLabel1.setForeground(Color.BLACK);
+        jLabel2.setForeground(Color.BLACK);
+        jLabel3.setForeground(Color.BLACK);
+        jLabel4.setForeground(Color.BLACK);
+        jLabel5.setForeground(Color.BLACK);
         this.setLocationRelativeTo(null);
         tblVentas.getTableHeader().setFont(new Font("", Font.BOLD, 20));
-       tblVentas.getTableHeader().setBackground(Color.BLACK);
-       tblVentas.getTableHeader().setForeground(Color.WHITE);
+       tblVentas.getTableHeader().setBackground(new java.awt.Color(116,85,31));
+       tblVentas.getTableHeader().setForeground(Color.BLACK);
     }
 
     /**
@@ -51,7 +57,6 @@ public class frmConsultaVentas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(118, 54, 38));
-        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -72,13 +77,13 @@ public class frmConsultaVentas extends javax.swing.JFrame {
         jTextField1.setText("Buscar...");
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 47, 760, 39));
 
-        jPanel1.setBackground(new java.awt.Color(169, 119, 74));
+        jPanel1.setBackground(new java.awt.Color(154, 119, 50));
         jPanel1.setForeground(new java.awt.Color(118, 54, 38));
 
         jLabel1.setFont(new java.awt.Font("Forte", 1, 22)); // NOI18N
         jLabel1.setText("CONSULTA DE VENTAS");
 
-        tblVentas.setBackground(new java.awt.Color(201, 170, 117));
+        tblVentas.setBackground(new java.awt.Color(248, 227, 128));
         tblVentas.setFont(tblVentas.getFont().deriveFont(tblVentas.getFont().getSize()+9f));
         tblVentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -167,7 +172,7 @@ public class frmConsultaVentas extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 1024, 640));

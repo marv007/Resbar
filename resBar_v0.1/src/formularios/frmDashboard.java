@@ -165,8 +165,8 @@ public class frmDashboard extends javax.swing.JFrame {
         tblOrdenes.setGridColor(new java.awt.Color(0, 0, 0));
         tblOrdenes.setOpaque(false);
         tblOrdenes.setRowHeight(24);
-        tblOrdenes.setSelectionBackground(new java.awt.Color(169, 119, 74));
-        tblOrdenes.setSelectionForeground(new java.awt.Color(255, 153, 51));
+        tblOrdenes.setSelectionBackground(new java.awt.Color(154, 119, 50));
+        tblOrdenes.setSelectionForeground(new java.awt.Color(248, 227, 128));
         tblOrdenes.getTableHeader().setResizingAllowed(false);
         tblOrdenes.getTableHeader().setReorderingAllowed(false);
         tblOrdenes.getTableHeader().setBackground(new java.awt.Color(0, 0, 0));
@@ -479,7 +479,7 @@ public class frmDashboard extends javax.swing.JFrame {
        //Cambiar fuente a cabecera de tabla
        tblOrdenes.getTableHeader().setFont(new Font("", Font.BOLD, 20));
        tblOrdenes.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       tblOrdenes.getTableHeader().setForeground(new java.awt.Color(245,168,12));
+       tblOrdenes.getTableHeader().setForeground(Color.BLACK);
        //Tamaño de columnas
        tblOrdenes.getColumnModel().getColumn(0).setPreferredWidth(10);
        tblOrdenes.getColumnModel().getColumn(1).setPreferredWidth(5);

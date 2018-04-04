@@ -22,6 +22,9 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         AWTUtilities.setWindowOpaque(this, false);
         
         initComponents();
+        //colorletra
+        lblLogo2.setForeground(Color.BLACK);
+        lblLogo3.setForeground(Color.BLACK);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
@@ -80,6 +83,7 @@ public class frmAgregarProductos extends javax.swing.JFrame {
             }
         });
 
+        lblLogo1.setBackground(new java.awt.Color(255, 255, 255));
         lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
         lblLogo2.setFont(new java.awt.Font("Forte", 0, 50)); // NOI18N

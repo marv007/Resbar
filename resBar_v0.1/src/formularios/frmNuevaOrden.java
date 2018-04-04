@@ -25,6 +25,16 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
      */
     public frmNuevaOrden() {
         initComponents();
+        //COLOR LETRA
+        jLabel1.setForeground(Color.BLACK);
+        jLabel2.setForeground(Color.BLACK);
+        jLabel3.setForeground(Color.BLACK);
+        jLabel4.setForeground(Color.BLACK);
+        jLabel5.setForeground(Color.BLACK);
+        jLabel6.setForeground(Color.BLACK);
+        lblHora.setForeground(Color.BLACK);
+        lblFecha.setForeground(Color.BLACK);
+        //HORA Y FECHA
         this.setLocationRelativeTo(null);
         lblFecha.setText(fecha());
         hilo =new Thread (this);
@@ -58,8 +68,8 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     
     public void encabezado(){
        tblDetalleOrden.getTableHeader().setFont(new Font("", Font.BOLD, 20));
-       tblDetalleOrden.getTableHeader().setBackground(Color.BLACK);
-       tblDetalleOrden.getTableHeader().setForeground(Color.WHITE);
+       tblDetalleOrden.getTableHeader().setBackground(new java.awt.Color(116,85,31));
+       tblDetalleOrden.getTableHeader().setForeground(Color.BLACK);
     }
 
     /**
@@ -106,7 +116,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jPanel1.setBackground(new java.awt.Color(154, 119, 50));
         jPanel1.setForeground(new java.awt.Color(169, 119, 74));
 
-        jButton2.setBackground(new java.awt.Color(255, 141, 63));
+        jButton2.setBackground(new java.awt.Color(245, 168, 12));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
         jButton2.setText("Enviar Orden");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -140,7 +150,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
 
         jTextField3.setFont(jTextField3.getFont().deriveFont(jTextField3.getFont().getSize()+9f));
 
-        tblDetalleOrden.setBackground(new java.awt.Color(213, 214, 210));
+        tblDetalleOrden.setBackground(new java.awt.Color(248, 227, 128));
         tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getSize()+9f));
         tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -158,9 +168,11 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         ));
         tblDetalleOrden.setGridColor(new java.awt.Color(0, 0, 0));
         tblDetalleOrden.setRowHeight(30);
+        tblDetalleOrden.setSelectionBackground(new java.awt.Color(154, 119, 50));
+        tblDetalleOrden.setSelectionForeground(new java.awt.Color(248, 227, 128));
         jScrollPane1.setViewportView(tblDetalleOrden);
 
-        jButton1.setBackground(new java.awt.Color(243, 153, 0));
+        jButton1.setBackground(new java.awt.Color(245, 168, 12));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
         jButton1.setText("Agregar Productos");
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
