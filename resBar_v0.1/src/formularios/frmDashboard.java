@@ -34,6 +34,8 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel2.setForeground(Color.BLACK);
     }
 
+    Color fore = new java.awt.Color(154,119,50);
+    Color back = new java.awt.Color(248,227,128);
     MiRender r = new MiRender();
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,10 +67,12 @@ public class frmDashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         jppMenu.setBackground(new java.awt.Color(255, 141, 63));
+        jppMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         jppMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenuItem1.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem1.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem1.setFont(jMenuItem1.getFont().deriveFont(jMenuItem1.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem1.getFont().getSize()+8));
+        jMenuItem1.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem1.setText("Agregar Productos");
         jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -80,8 +84,9 @@ public class frmDashboard extends javax.swing.JFrame {
         });
         jppMenu.add(jMenuItem1);
 
-        jMenuItem2.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem2.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem2.setFont(jMenuItem2.getFont().deriveFont(jMenuItem2.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem2.getFont().getSize()+8));
+        jMenuItem2.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem2.setText("Imprimir Cuenta");
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -93,8 +98,9 @@ public class frmDashboard extends javax.swing.JFrame {
         });
         jppMenu.add(jMenuItem2);
 
-        jMenuItem3.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem3.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem3.setFont(jMenuItem3.getFont().deriveFont(jMenuItem3.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem3.getFont().getSize()+8));
+        jMenuItem3.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem3.setText("Modificar Cuenta");
         jMenuItem3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -106,8 +112,9 @@ public class frmDashboard extends javax.swing.JFrame {
         });
         jppMenu.add(jMenuItem3);
 
-        jMenuItem5.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem5.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem5.setFont(jMenuItem5.getFont().deriveFont(jMenuItem5.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem5.getFont().getSize()+8));
+        jMenuItem5.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem5.setText("Cancelar Orden");
         jMenuItem5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -119,8 +126,9 @@ public class frmDashboard extends javax.swing.JFrame {
         });
         jppMenu.add(jMenuItem5);
 
-        jMenuItem4.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem4.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem4.setFont(jMenuItem4.getFont().deriveFont(jMenuItem4.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem4.getFont().getSize()+8));
+        jMenuItem4.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem4.setText("Cobrar");
         jMenuItem4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -333,55 +341,55 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
     private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
-        jMenuItem1.setBackground(Color.black);
-        jMenuItem1.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem1.setBackground(back);
+        jMenuItem1.setForeground(fore);
     }//GEN-LAST:event_jMenuItem1MouseEntered
 
     private void jMenuItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseExited
-        jMenuItem1.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem1.setForeground(Color.black);
+        jMenuItem1.setBackground(fore);
+        jMenuItem1.setForeground(back);
     }//GEN-LAST:event_jMenuItem1MouseExited
 
     private void jMenuItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseExited
-        jMenuItem2.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem2.setForeground(Color.black);
+        jMenuItem2.setBackground(fore);
+        jMenuItem2.setForeground(back);
     }//GEN-LAST:event_jMenuItem2MouseExited
 
     private void jMenuItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseEntered
-        jMenuItem2.setBackground(Color.black);
-        jMenuItem2.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem2.setBackground(back);
+        jMenuItem2.setForeground(fore);
         
         
     }//GEN-LAST:event_jMenuItem2MouseEntered
 
     private void jMenuItem3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseExited
-        jMenuItem3.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem3.setForeground(Color.black);
+        jMenuItem3.setBackground(fore);
+        jMenuItem3.setForeground(back);
     }//GEN-LAST:event_jMenuItem3MouseExited
 
     private void jMenuItem3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseEntered
-        jMenuItem3.setBackground(Color.black);
-        jMenuItem3.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem3.setBackground(back);
+        jMenuItem3.setForeground(fore);
     }//GEN-LAST:event_jMenuItem3MouseEntered
 
     private void jMenuItem5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem5MouseExited
-        jMenuItem5.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem5.setForeground(Color.black);
+        jMenuItem5.setBackground(fore);
+        jMenuItem5.setForeground(back);
     }//GEN-LAST:event_jMenuItem5MouseExited
 
     private void jMenuItem5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem5MouseEntered
-        jMenuItem5.setBackground(Color.black);
-        jMenuItem5.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem5.setBackground(back);
+        jMenuItem5.setForeground(fore);
     }//GEN-LAST:event_jMenuItem5MouseEntered
 
     private void jMenuItem4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem4MouseExited
-        jMenuItem4.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem4.setForeground(Color.black);
+        jMenuItem4.setBackground(fore);
+        jMenuItem4.setForeground(back);
     }//GEN-LAST:event_jMenuItem4MouseExited
 
     private void jMenuItem4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem4MouseEntered
-        jMenuItem4.setBackground(Color.black);
-        jMenuItem4.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem4.setBackground(back);
+        jMenuItem4.setForeground(fore);
     }//GEN-LAST:event_jMenuItem4MouseEntered
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
