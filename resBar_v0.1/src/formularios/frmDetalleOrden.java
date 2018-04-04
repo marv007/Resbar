@@ -10,6 +10,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -97,7 +98,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jpnlPrincipal = new javax.swing.JPanel();
         jpnlMenus = new javax.swing.JPanel();
         btnEntradas = new javax.swing.JButton();
-        btnBocas = new javax.swing.JButton();
+        btnCarnes = new javax.swing.JButton();
         btnSopas = new javax.swing.JButton();
         btnBebidas = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -109,6 +110,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        btnPostres = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
 
@@ -142,7 +145,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agregar Productos");
-        setMinimumSize(new java.awt.Dimension(1020, 770));
+        setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
+        setMinimumSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -168,26 +172,30 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         btnEntradas.setBackground(new java.awt.Color(245, 168, 12));
         btnEntradas.setFont(btnEntradas.getFont().deriveFont(btnEntradas.getFont().getStyle() | java.awt.Font.BOLD, btnEntradas.getFont().getSize()+9));
         btnEntradas.setText("Entradas");
+        btnEntradas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpnlMenus.add(btnEntradas);
-        btnEntradas.setBounds(30, 200, 190, 80);
+        btnEntradas.setBounds(30, 210, 200, 50);
 
-        btnBocas.setBackground(new java.awt.Color(245, 168, 12));
-        btnBocas.setFont(btnBocas.getFont().deriveFont(btnBocas.getFont().getStyle() | java.awt.Font.BOLD, btnBocas.getFont().getSize()+9));
-        btnBocas.setText("Bocas");
-        jpnlMenus.add(btnBocas);
-        btnBocas.setBounds(30, 290, 190, 80);
+        btnCarnes.setBackground(new java.awt.Color(245, 168, 12));
+        btnCarnes.setFont(btnCarnes.getFont().deriveFont(btnCarnes.getFont().getStyle() | java.awt.Font.BOLD, btnCarnes.getFont().getSize()+9));
+        btnCarnes.setText("Carnes");
+        btnCarnes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpnlMenus.add(btnCarnes);
+        btnCarnes.setBounds(30, 270, 200, 50);
 
         btnSopas.setBackground(new java.awt.Color(245, 168, 12));
         btnSopas.setFont(btnSopas.getFont().deriveFont(btnSopas.getFont().getStyle() | java.awt.Font.BOLD, btnSopas.getFont().getSize()+9));
         btnSopas.setText("Sopas");
+        btnSopas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpnlMenus.add(btnSopas);
-        btnSopas.setBounds(30, 380, 190, 80);
+        btnSopas.setBounds(30, 390, 200, 50);
 
         btnBebidas.setBackground(new java.awt.Color(245, 168, 12));
         btnBebidas.setFont(btnBebidas.getFont().deriveFont(btnBebidas.getFont().getStyle() | java.awt.Font.BOLD, btnBebidas.getFont().getSize()+9));
         btnBebidas.setText("Bebidas");
+        btnBebidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jpnlMenus.add(btnBebidas);
-        btnBebidas.setBounds(30, 470, 190, 80);
+        btnBebidas.setBounds(30, 450, 200, 50);
 
         tblDetalleOrden.setBackground(new java.awt.Color(248, 227, 128));
         tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getStyle() & ~java.awt.Font.BOLD, tblDetalleOrden.getFont().getSize()+9));
@@ -203,6 +211,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         tblDetalleOrden.setRowHeight(40);
         tblDetalleOrden.setSelectionBackground(new java.awt.Color(169, 119, 74));
         tblDetalleOrden.setSelectionForeground(new java.awt.Color(255, 153, 51));
+        tblDetalleOrden.getTableHeader().setResizingAllowed(false);
+        tblDetalleOrden.getTableHeader().setReorderingAllowed(false);
         tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDetalleOrdenMouseClicked(evt);
@@ -211,18 +221,19 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblDetalleOrden);
 
         jpnlMenus.add(jScrollPane1);
-        jScrollPane1.setBounds(230, 200, 770, 350);
+        jScrollPane1.setBounds(250, 200, 750, 380);
 
         btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(btnOk.getFont().deriveFont(btnOk.getFont().getStyle() | java.awt.Font.BOLD, btnOk.getFont().getSize()+9));
-        btnOk.setText("Ok");
+        btnOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
+        btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOkActionPerformed(evt);
             }
         });
         jpnlMenus.add(btnOk);
-        btnOk.setBounds(810, 580, 190, 80);
+        btnOk.setBounds(920, 600, 80, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
         jpnlMenus.add(jLabel1);
@@ -245,12 +256,26 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel5.setText("Menús");
         jpnlMenus.add(jLabel5);
-        jLabel5.setBounds(80, 170, 90, 30);
+        jLabel5.setBounds(100, 170, 90, 30);
 
         jLabel6.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel6.setText("Detalle de Ordenes");
         jpnlMenus.add(jLabel6);
-        jLabel6.setBounds(240, 170, 200, 30);
+        jLabel6.setBounds(250, 170, 200, 30);
+
+        jButton1.setBackground(new java.awt.Color(245, 168, 12));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jButton1.setText("Pescados & Mariscos");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpnlMenus.add(jButton1);
+        jButton1.setBounds(30, 330, 200, 50);
+
+        btnPostres.setBackground(new java.awt.Color(245, 168, 12));
+        btnPostres.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        btnPostres.setText("Postres");
+        btnPostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jpnlMenus.add(btnPostres);
+        btnPostres.setBounds(30, 510, 200, 50);
 
         txtBuscar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         txtBuscar.setText("Buscar...");
@@ -260,9 +285,10 @@ public class frmDetalleOrden extends javax.swing.JFrame {
             }
         });
 
-        btnBuscar.setBackground(new java.awt.Color(243, 153, 0));
+        btnBuscar.setBackground(new java.awt.Color(245, 168, 12));
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/search.png"))); // NOI18N
+        btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBuscar.setPreferredSize(new java.awt.Dimension(90, 31));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -389,11 +415,13 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBebidas;
-    private javax.swing.JButton btnBocas;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCarnes;
     private javax.swing.JButton btnEntradas;
     private javax.swing.JButton btnOk;
+    private javax.swing.JButton btnPostres;
     private javax.swing.JButton btnSopas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
