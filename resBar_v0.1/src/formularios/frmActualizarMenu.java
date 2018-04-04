@@ -132,7 +132,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         jPanel1.setLayout(null);
 
-        btnAñadir.setBackground(new java.awt.Color(243, 153, 0));
+        btnAñadir.setBackground(new java.awt.Color(245, 168, 12));
         btnAñadir.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
         btnAñadir.setText("Añadir");
@@ -147,7 +147,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jPanel1.add(btnAñadir);
         btnAñadir.setBounds(330, 630, 110, 83);
 
-        btnOk.setBackground(new java.awt.Color(243, 153, 0));
+        btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
         btnOk.setText("OK");
@@ -166,7 +166,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
 
         btnEntradas.setBackground(new java.awt.Color(245, 168, 12));
-        btnEntradas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnEntradas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnEntradas.setText("Entradas");
         btnEntradas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnEntradas.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +176,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         btnCarnes.setBackground(new java.awt.Color(245, 168, 12));
-        btnCarnes.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnCarnes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnCarnes.setText("Carnes");
         btnCarnes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnCarnes.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +186,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         btnPescadosY.setBackground(new java.awt.Color(245, 168, 12));
-        btnPescadosY.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        btnPescadosY.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         btnPescadosY.setText("Pescados y Mariscos");
         btnPescadosY.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPescadosY.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +196,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         btnPostres.setBackground(new java.awt.Color(245, 168, 12));
-        btnPostres.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnPostres.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnPostres.setText("Postres");
         btnPostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPostres.addActionListener(new java.awt.event.ActionListener() {
@@ -206,7 +206,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         btnBebidas.setBackground(new java.awt.Color(245, 168, 12));
-        btnBebidas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnBebidas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnBebidas.setText("Bebidas");
         btnBebidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnBebidas.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +220,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jLabel1.setText("Categoría:");
 
         btnSopas.setBackground(new java.awt.Color(245, 168, 12));
-        btnSopas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnSopas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnSopas.setText("Sopas");
         btnSopas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnSopas.addActionListener(new java.awt.event.ActionListener() {

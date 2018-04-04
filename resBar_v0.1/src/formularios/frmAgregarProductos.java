@@ -95,10 +95,10 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         lblUno.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblUno.setText("Categoria:");
 
-        jComboBox1.setBackground(new java.awt.Color(53, 60, 63));
+        jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
         jComboBox1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(243, 153, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entradas", "Carnes", "Pescados", "Postres", "Bebidas" }));
+        jComboBox1.setForeground(new java.awt.Color(245, 168, 12));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entradas", "Carnes", "Pescados Y Mariscos", "Sopas", "Postres", "Bebidas" }));
 
         lblDos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblDos.setText("Producto:");
@@ -117,7 +117,7 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         btnOk.setText("Ok");
         btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
 
-        btnCancelar.setBackground(new java.awt.Color(243, 153, 0));
+        btnCancelar.setBackground(new java.awt.Color(245, 168, 12));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));

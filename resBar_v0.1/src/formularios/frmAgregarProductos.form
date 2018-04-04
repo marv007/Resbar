@@ -169,21 +169,22 @@
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="3f" green="3c" red="35" type="rgb"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="99" red="f3" type="rgb"/>
+              <Color blue="c" green="a8" red="f5" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="6">
                 <StringItem index="0" value="Entradas"/>
                 <StringItem index="1" value="Carnes"/>
-                <StringItem index="2" value="Pescados"/>
-                <StringItem index="3" value="Postres"/>
-                <StringItem index="4" value="Bebidas"/>
+                <StringItem index="2" value="Pescados Y Mariscos"/>
+                <StringItem index="3" value="Sopas"/>
+                <StringItem index="4" value="Postres"/>
+                <StringItem index="5" value="Bebidas"/>
               </StringArray>
             </Property>
           </Properties>
@@ -255,7 +256,7 @@
         <Component class="javax.swing.JButton" name="btnCancelar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="99" red="f3" type="rgb"/>
+              <Color blue="c" green="a8" red="f5" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
