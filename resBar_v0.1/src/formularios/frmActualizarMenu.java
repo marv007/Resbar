@@ -24,6 +24,11 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     
     public frmActualizarMenu() {
         initComponents();
+       //colorletra
+       lblEncabezado.setForeground(Color.BLACK);
+       lblLogo2.setForeground(Color.BLACK);
+       lblLogo3.setForeground(Color.BLACK);
+     
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
@@ -117,9 +122,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Administrar Menú");
-        setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        jPanel1.setBackground(new java.awt.Color(169, 119, 74));
+        jPanel1.setBackground(new java.awt.Color(154, 119, 50));
         jPanel1.setPreferredSize(new java.awt.Dimension(1024, 768));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -161,7 +165,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPane1.setBackground(new java.awt.Color(255, 255, 255));
         pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
 
-        btnEntradas.setBackground(new java.awt.Color(243, 153, 0));
+        btnEntradas.setBackground(new java.awt.Color(245, 168, 12));
         btnEntradas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnEntradas.setText("Entradas");
         btnEntradas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -171,7 +175,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
-        btnCarnes.setBackground(new java.awt.Color(243, 153, 0));
+        btnCarnes.setBackground(new java.awt.Color(245, 168, 12));
         btnCarnes.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnCarnes.setText("Carnes");
         btnCarnes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -181,9 +185,15 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         btnPescados.setBackground(new java.awt.Color(243, 153, 0));
         btnPescados.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
         btnPescados.setText("Pescados y Mariscos");
+=======
+        btnPescados.setBackground(new java.awt.Color(245, 168, 12));
+        btnPescados.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnPescados.setText("Pescados");
+>>>>>>> 0b71c2f8b3c424b032e5f7c0a1bd32d7b391c5bb
         btnPescados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPescados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,7 +201,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
-        btnPostres.setBackground(new java.awt.Color(243, 153, 0));
+        btnPostres.setBackground(new java.awt.Color(245, 168, 12));
         btnPostres.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnPostres.setText("Postres");
         btnPostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -201,7 +211,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
-        btnBebidas.setBackground(new java.awt.Color(243, 153, 0));
+        btnBebidas.setBackground(new java.awt.Color(245, 168, 12));
         btnBebidas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnBebidas.setText("Bebidas");
         btnBebidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -269,6 +279,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
 
+        tbTabla.setBackground(new java.awt.Color(248, 227, 128));
         tbTabla.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         tbTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -539,8 +550,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
        tbTabla.setDefaultEditor(Object.class, null);
        //Cambiar fuente a cabecera de tabla
        tbTabla.getTableHeader().setFont(new Font("Verdana", Font.BOLD, 20));
-       tbTabla.getTableHeader().setBackground(Color.black);
-       tbTabla.getTableHeader().setForeground(Color.WHITE);
+       tbTabla.getTableHeader().setBackground(new java.awt.Color(116,85,31));
+       tbTabla.getTableHeader().setForeground(Color.BLACK);
        //Tamaño de columnas
        tbTabla.getColumnModel().getColumn(0).setPreferredWidth(150);
        tbTabla.getColumnModel().getColumn(1).setPreferredWidth(10);
