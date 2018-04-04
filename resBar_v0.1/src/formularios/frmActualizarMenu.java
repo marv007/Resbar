@@ -46,7 +46,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      //Botones
      btnEntradas.setForeground(Color.BLACK);
      btnCarnes.setForeground(Color.BLACK);
-     btnPescados.setForeground(Color.BLACK);
+     btnPescadosY.setForeground(Color.BLACK);
      btnSopas.setForeground(Color.BLACK);
      btnPostres.setForeground(Color.BLACK);
      btnBebidas.setForeground(Color.BLACK);
@@ -78,7 +78,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPane1 = new javax.swing.JPanel();
         btnEntradas = new javax.swing.JButton();
         btnCarnes = new javax.swing.JButton();
-        btnPescados = new javax.swing.JButton();
+        btnPescadosY = new javax.swing.JButton();
         btnPostres = new javax.swing.JButton();
         btnBebidas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -185,19 +185,13 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        btnPescados.setBackground(new java.awt.Color(243, 153, 0));
-        btnPescados.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        btnPescados.setText("Pescados y Mariscos");
-=======
-        btnPescados.setBackground(new java.awt.Color(245, 168, 12));
-        btnPescados.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnPescados.setText("Pescados");
->>>>>>> 0b71c2f8b3c424b032e5f7c0a1bd32d7b391c5bb
-        btnPescados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnPescados.addActionListener(new java.awt.event.ActionListener() {
+        btnPescadosY.setBackground(new java.awt.Color(245, 168, 12));
+        btnPescadosY.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        btnPescadosY.setText("Pescados y Mariscos");
+        btnPescadosY.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        btnPescadosY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPescadosActionPerformed(evt);
+                btnPescadosYActionPerformed(evt);
             }
         });
 
@@ -225,7 +219,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Categoría:");
 
-        btnSopas.setBackground(new java.awt.Color(243, 153, 0));
+        btnSopas.setBackground(new java.awt.Color(245, 168, 12));
         btnSopas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnSopas.setText("Sopas");
         btnSopas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -244,7 +238,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                 .addGroup(pnPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEntradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCarnes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPescados, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(btnPescadosY, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                     .addComponent(btnPostres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBebidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSopas, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
@@ -264,7 +258,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCarnes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPescados, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPescadosY, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSopas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -444,10 +438,10 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         txtBuscar.setText("Buscar Carnes...");
     }//GEN-LAST:event_btnCarnesActionPerformed
 
-    private void btnPescadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPescadosActionPerformed
+    private void btnPescadosYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPescadosYActionPerformed
         lblCabecera.setText("Pescados Y Mariscos");
         txtBuscar.setText("Buscar Pescados Y Mariscos...");
-    }//GEN-LAST:event_btnPescadosActionPerformed
+    }//GEN-LAST:event_btnPescadosYActionPerformed
 
     private void btnPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostresActionPerformed
         lblCabecera.setText("Postres");
@@ -567,7 +561,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnCarnes;
     private javax.swing.JButton btnEntradas;
     private javax.swing.JButton btnOk;
-    private javax.swing.JButton btnPescados;
+    private javax.swing.JButton btnPescadosY;
     private javax.swing.JButton btnPostres;
     private javax.swing.JButton btnSopas;
     private javax.swing.JButton jButton2;

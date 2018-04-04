@@ -30,7 +30,7 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
         
         //pane tranparente
-        pnFondo.setBackground(new Color(169,119,74,240));
+        pnFondo.setBackground(new Color(154,119,50,240));
         
         lblLogo1.setForeground(Color.BLACK);
         lblLogo2.setForeground(Color.BLACK);

@@ -192,7 +192,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnEntradas" max="32767" attributes="0"/>
                           <Component id="btnCarnes" max="32767" attributes="0"/>
-                          <Component id="btnPescados" alignment="0" pref="260" max="32767" attributes="0"/>
+                          <Component id="btnPescadosY" alignment="0" pref="260" max="32767" attributes="0"/>
                           <Component id="btnPostres" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnBebidas" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnSopas" alignment="0" pref="264" max="32767" attributes="0"/>
@@ -216,7 +216,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnCarnes" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnPescados" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="btnPescadosY" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnSopas" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -277,7 +277,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCarnesActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnPescados">
+            <Component class="javax.swing.JButton" name="btnPescadosY">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="c" green="a8" red="f5" type="rgb"/>
@@ -298,7 +298,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPescadosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPescadosYActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnPostres">
@@ -363,7 +363,7 @@
             <Component class="javax.swing.JButton" name="btnSopas">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="99" red="f3" type="rgb"/>
+                  <Color blue="c" green="a8" red="f5" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="24" style="1"/>
