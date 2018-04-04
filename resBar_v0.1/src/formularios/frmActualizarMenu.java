@@ -33,6 +33,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      miTabla();
      pnPane1.setBackground(new Color(0,0,0,100));
      pnPaneTabla.setBackground(new Color(0,0,0,100));
+     
      lblLogo2.setForeground(Color.BLACK);
      lblLogo3.setForeground(Color.BLACK);
      lblEncabezado.setForeground(Color.BLACK);
@@ -41,6 +42,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      btnEntradas.setForeground(Color.BLACK);
      btnCarnes.setForeground(Color.BLACK);
      btnPescados.setForeground(Color.BLACK);
+     btnSopas.setForeground(Color.BLACK);
      btnPostres.setForeground(Color.BLACK);
      btnBebidas.setForeground(Color.BLACK);
      btnAñadir.setForeground(Color.BLACK);
@@ -75,10 +77,11 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         btnPostres = new javax.swing.JButton();
         btnBebidas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnSopas = new javax.swing.JButton();
         pnPaneTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbTabla = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         lblCabecera = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -138,7 +141,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAñadir);
-        btnAñadir.setBounds(330, 580, 110, 83);
+        btnAñadir.setBounds(330, 630, 110, 83);
 
         btnOk.setBackground(new java.awt.Color(243, 153, 0));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -153,7 +156,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnOk);
-        btnOk.setBounds(880, 580, 110, 83);
+        btnOk.setBounds(880, 630, 110, 83);
 
         pnPane1.setBackground(new java.awt.Color(255, 255, 255));
         pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
@@ -179,8 +182,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
 
         btnPescados.setBackground(new java.awt.Color(243, 153, 0));
-        btnPescados.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnPescados.setText("Pescados");
+        btnPescados.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        btnPescados.setText("Pescados y Mariscos");
         btnPescados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnPescados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +215,16 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Categoría:");
 
+        btnSopas.setBackground(new java.awt.Color(243, 153, 0));
+        btnSopas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnSopas.setText("Sopas");
+        btnSopas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        btnSopas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSopasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnPane1Layout = new javax.swing.GroupLayout(pnPane1);
         pnPane1.setLayout(pnPane1Layout);
         pnPane1Layout.setHorizontalGroup(
@@ -223,7 +236,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                     .addComponent(btnCarnes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPescados, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                     .addComponent(btnPostres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBebidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBebidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSopas, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -235,13 +249,15 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             .addGroup(pnPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCarnes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPescados, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSopas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnPostres, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,7 +265,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnPane1);
-        pnPane1.setBounds(30, 140, 290, 420);
+        pnPane1.setBounds(30, 140, 290, 470);
 
         pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
 
@@ -276,23 +292,25 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbTabla);
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextField1.setText("Buscar Entradas...");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        txtBuscar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        txtBuscar.setText("Buscar Entradas...");
+        txtBuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jButton2.setBackground(new java.awt.Color(117, 104, 103));
         jButton2.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/search.png"))); // NOI18N
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        lblCabecera.setFont(new java.awt.Font("Aharoni", 1, 24)); // NOI18N
+        lblCabecera.setBackground(new java.awt.Color(0, 0, 0));
+        lblCabecera.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblCabecera.setForeground(new java.awt.Color(255, 255, 255));
         lblCabecera.setText("Entradas");
+        lblCabecera.setOpaque(true);
 
         javax.swing.GroupLayout pnPaneTablaLayout = new javax.swing.GroupLayout(pnPaneTabla);
         pnPaneTabla.setLayout(pnPaneTablaLayout);
@@ -303,11 +321,11 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                 .addGroup(pnPaneTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -316,19 +334,16 @@ public class frmActualizarMenu extends javax.swing.JFrame {
             .addGroup(pnPaneTablaLayout.createSequentialGroup()
                 .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnPaneTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(pnPaneTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtBuscar)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel1.add(pnPaneTabla);
-        pnPaneTabla.setBounds(330, 140, 660, 420);
+        pnPaneTabla.setBounds(330, 140, 660, 470);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo_116x116.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -410,22 +425,27 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
        lblCabecera.setText("Entradas");
+       txtBuscar.setText("Buscar Entradas...");
     }//GEN-LAST:event_btnEntradasActionPerformed
 
     private void btnCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarnesActionPerformed
         lblCabecera.setText("Carnes");
+        txtBuscar.setText("Buscar Carnes...");
     }//GEN-LAST:event_btnCarnesActionPerformed
 
     private void btnPescadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPescadosActionPerformed
-        lblCabecera.setText("Pescados");
+        lblCabecera.setText("Pescados Y Mariscos");
+        txtBuscar.setText("Buscar Pescados Y Mariscos...");
     }//GEN-LAST:event_btnPescadosActionPerformed
 
     private void btnPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostresActionPerformed
         lblCabecera.setText("Postres");
+        txtBuscar.setText("Buscar Postres...");
     }//GEN-LAST:event_btnPostresActionPerformed
 
     private void btnBebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBebidasActionPerformed
        lblCabecera.setText("Bebidas");
+       txtBuscar.setText("Buscar Bebidas...");
     }//GEN-LAST:event_btnBebidasActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
@@ -442,6 +462,11 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         frmAgregarProductos agregar = new frmAgregarProductos();
         agregar.setVisible(true);
     }//GEN-LAST:event_btnAñadirActionPerformed
+
+    private void btnSopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSopasActionPerformed
+        lblCabecera.setText("Sopas");
+        txtBuscar.setText("Buscar Sopas...");
+    }//GEN-LAST:event_btnSopasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -533,12 +558,12 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnOk;
     private javax.swing.JButton btnPescados;
     private javax.swing.JButton btnPostres;
+    private javax.swing.JButton btnSopas;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCabecera;
     private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblLogo2;
@@ -549,5 +574,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem ppItem2;
     private javax.swing.JPopupMenu ppMenuAct;
     private javax.swing.JTable tbTabla;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
