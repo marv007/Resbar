@@ -69,7 +69,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     public void encabezado(){
        tblDetalleOrden.getTableHeader().setFont(new Font("", Font.BOLD, 20));
        tblDetalleOrden.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       tblDetalleOrden.getTableHeader().setForeground(Color.BLACK);
+       tblDetalleOrden.getTableHeader().setForeground(new java.awt.Color(245,168,12));
     }
 
     /**

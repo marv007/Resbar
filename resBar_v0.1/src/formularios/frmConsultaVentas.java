@@ -28,7 +28,7 @@ public class frmConsultaVentas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         tblVentas.getTableHeader().setFont(new Font("", Font.BOLD, 20));
        tblVentas.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       tblVentas.getTableHeader().setForeground(Color.BLACK);
+       tblVentas.getTableHeader().setForeground(new java.awt.Color(245,168,12));
     }
 
     /**

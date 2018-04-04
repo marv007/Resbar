@@ -283,7 +283,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
             }
         ));
-        tbTabla.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        tbTabla.setGridColor(new java.awt.Color(0, 0, 0));
+        tbTabla.setSelectionBackground(new java.awt.Color(154, 119, 50));
+        tbTabla.setSelectionForeground(new java.awt.Color(248, 227, 128));
         tbTabla.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbTablaMouseClicked(evt);
@@ -374,7 +376,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1031, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -545,7 +547,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
        //Cambiar fuente a cabecera de tabla
        tbTabla.getTableHeader().setFont(new Font("Verdana", Font.BOLD, 20));
        tbTabla.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       tbTabla.getTableHeader().setForeground(Color.BLACK);
+       tbTabla.getTableHeader().setForeground(new java.awt.Color(245,168,12));
        //Tamaño de columnas
        tbTabla.getColumnModel().getColumn(0).setPreferredWidth(150);
        tbTabla.getColumnModel().getColumn(1).setPreferredWidth(10);

@@ -63,7 +63,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         //cambiar la fuente a la letra de la cabecera de la tabla
         this.tblDetalleOrden.getTableHeader().setFont(new Font("",Font.BOLD,20));
        this.tblDetalleOrden.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       this.tblDetalleOrden.getTableHeader().setForeground(Color.BLACK); 
+       this.tblDetalleOrden.getTableHeader().setForeground(new java.awt.Color(245,168,12)); 
        
        
        
@@ -159,7 +159,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
             }
         });
 
-        jpnlMenus.setBackground(new java.awt.Color(116, 85, 31));
+        jpnlMenus.setBackground(new java.awt.Color(154, 119, 50));
         jpnlMenus.setComponentPopupMenu(jppMenu);
         jpnlMenus.setPreferredSize(new java.awt.Dimension(1024, 768));
         jpnlMenus.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -209,8 +209,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         ));
         tblDetalleOrden.setGridColor(new java.awt.Color(0, 0, 0));
         tblDetalleOrden.setRowHeight(40);
-        tblDetalleOrden.setSelectionBackground(new java.awt.Color(169, 119, 74));
-        tblDetalleOrden.setSelectionForeground(new java.awt.Color(255, 153, 51));
+        tblDetalleOrden.setSelectionBackground(new java.awt.Color(154, 119, 50));
+        tblDetalleOrden.setSelectionForeground(new java.awt.Color(248, 227, 128));
         tblDetalleOrden.getTableHeader().setResizingAllowed(false);
         tblDetalleOrden.getTableHeader().setReorderingAllowed(false);
         tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
