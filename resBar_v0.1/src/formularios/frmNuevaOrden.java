@@ -40,12 +40,16 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         hilo =new Thread (this);
         hilo.start();
         setVisible(true);
-        encabezado();
-                
         
+        tblDetalleOrden.setDefaultEditor(Object.class, null);
+        tblDetalleOrden.getColumnModel().getColumn(1).setPreferredWidth(5);       
+        encabezado();
         
         
     }
+    
+    Color fore = new java.awt.Color(154,119,50);
+    Color back = new java.awt.Color(248,227,128);
     public void hora(){
     Calendar calendario= new GregorianCalendar();
     Date horaActual = new Date();
@@ -82,6 +86,9 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
+        jppMenu = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
@@ -101,6 +108,36 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
+        jppMenu.setBackground(new java.awt.Color(191, 169, 164));
+
+        jMenuItem1.setBackground(new java.awt.Color(154, 119, 50));
+        jMenuItem1.setFont(jMenuItem1.getFont().deriveFont(jMenuItem1.getFont().getSize()+8f));
+        jMenuItem1.setForeground(new java.awt.Color(248, 227, 128));
+        jMenuItem1.setText("Más");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseExited(evt);
+            }
+        });
+        jppMenu.add(jMenuItem1);
+
+        jMenuItem2.setBackground(new java.awt.Color(154, 119, 50));
+        jMenuItem2.setFont(jMenuItem2.getFont().deriveFont(jMenuItem2.getFont().getSize()+8f));
+        jMenuItem2.setForeground(new java.awt.Color(248, 227, 128));
+        jMenuItem2.setText("Menos");
+        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jMenuItem2MouseExited(evt);
+            }
+        });
+        jppMenu.add(jMenuItem2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nueva Orden | Resbar v0.1");
         setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
@@ -115,6 +152,11 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
 
         jPanel1.setBackground(new java.awt.Color(154, 119, 50));
         jPanel1.setForeground(new java.awt.Color(169, 119, 74));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel1MouseEntered(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(245, 168, 12));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
@@ -170,6 +212,11 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         tblDetalleOrden.setRowHeight(30);
         tblDetalleOrden.setSelectionBackground(new java.awt.Color(154, 119, 50));
         tblDetalleOrden.setSelectionForeground(new java.awt.Color(248, 227, 128));
+        tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDetalleOrdenMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDetalleOrden);
 
         jButton1.setBackground(new java.awt.Color(245, 168, 12));
@@ -325,6 +372,39 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
+        jMenuItem1.setBackground(back);
+        jMenuItem1.setForeground(fore);
+    }//GEN-LAST:event_jMenuItem1MouseEntered
+
+    private void jMenuItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseExited
+        jMenuItem1.setBackground(fore);
+        jMenuItem1.setForeground(back);
+    }//GEN-LAST:event_jMenuItem1MouseExited
+
+    private void jMenuItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseEntered
+        jMenuItem2.setBackground(back);
+        jMenuItem2.setForeground(fore);
+    }//GEN-LAST:event_jMenuItem2MouseEntered
+
+    private void jMenuItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseExited
+        jMenuItem2.setBackground(fore);
+        jMenuItem2.setForeground(back);
+    }//GEN-LAST:event_jMenuItem2MouseExited
+
+    private void tblDetalleOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDetalleOrdenMouseClicked
+        if ((evt.getModifiers() & 2) !=0){
+         jppMenu.setVisible(false);        
+         }else{
+        jppMenu.setVisible(true);
+        jppMenu.setLocation(evt.getLocationOnScreen());
+         }
+    }//GEN-LAST:event_tblDetalleOrdenMouseClicked
+
+    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
+        jppMenu.setVisible(false);
+    }//GEN-LAST:event_jPanel1MouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -377,6 +457,8 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -384,6 +466,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JPopupMenu jppMenu;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblHora;

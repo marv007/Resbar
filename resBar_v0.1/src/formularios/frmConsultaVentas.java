@@ -7,6 +7,7 @@ package formularios;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -56,7 +57,9 @@ public class frmConsultaVentas extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consulta Ventas | Resbar v0.1");
         setBackground(new java.awt.Color(118, 54, 38));
+        setIconImage(new ImageIcon(getClass().getResource("/iconos/logo.png")).getImage());
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {

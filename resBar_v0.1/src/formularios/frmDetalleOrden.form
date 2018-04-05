@@ -16,10 +16,13 @@
         <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="4a" green="77" red="a9" type="rgb"/>
+              <Color blue="32" green="77" red="9a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="80" green="e3" red="f8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe1;s"/>
           </Properties>
@@ -31,10 +34,13 @@
         <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="4a" green="77" red="a9" type="rgb"/>
+              <Color blue="32" green="77" red="9a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="20" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="80" green="e3" red="f8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Menos"/>
           </Properties>
@@ -244,7 +250,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="250" y="200" width="750" height="380"/>
+                  <AbsoluteConstraints x="250" y="210" width="750" height="350"/>
                 </Constraint>
               </Constraints>
 
@@ -307,7 +313,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="920" y="600" width="80" height="70"/>
+                  <AbsoluteConstraints x="920" y="580" width="80" height="70"/>
                 </Constraint>
               </Constraints>
             </Component>

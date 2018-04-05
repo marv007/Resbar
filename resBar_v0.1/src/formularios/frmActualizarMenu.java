@@ -57,7 +57,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      
     
     }
-    
+    Color fore = new java.awt.Color(154,119,50);
+    Color back = new java.awt.Color(248,227,128);
     MiRender r = new MiRender();
 
     /**
@@ -94,28 +95,30 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         lblLogo3 = new javax.swing.JLabel();
         lblEncabezado = new javax.swing.JLabel();
 
-        ppItem1.setBackground(new java.awt.Color(169, 119, 74));
+        ppItem1.setBackground(new java.awt.Color(154, 119, 50));
         ppItem1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        ppItem1.setForeground(new java.awt.Color(248, 227, 128));
         ppItem1.setText("Editar Producto");
         ppItem1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ppItem1MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ppItem1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ppItem1MouseExited(evt);
             }
         });
         ppMenuAct.add(ppItem1);
 
-        ppItem2.setBackground(new java.awt.Color(169, 119, 74));
+        ppItem2.setBackground(new java.awt.Color(154, 119, 50));
         ppItem2.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        ppItem2.setForeground(new java.awt.Color(248, 227, 128));
         ppItem2.setText("Borrar Producto");
         ppItem2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ppItem2MouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ppItem2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ppItem2MouseExited(evt);
             }
         });
         ppMenuAct.add(ppItem2);
@@ -406,8 +409,8 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseEntered
 
     private void ppItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseEntered
-        ppItem1.setBackground(Color.BLACK);
-         ppItem1.setForeground(new Color(169,119,74));
+       ppItem1.setBackground(back);
+       ppItem1.setForeground(fore);
         
     }//GEN-LAST:event_ppItem1MouseEntered
 
@@ -416,18 +419,18 @@ public class frmActualizarMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_tbTablaMouseExited
 
     private void ppItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseExited
-          ppItem1.setBackground(new Color(169,119,74));
-         ppItem1.setForeground(Color.BLACK);
+       ppItem1.setBackground(fore);
+       ppItem1.setForeground(back);
     }//GEN-LAST:event_ppItem1MouseExited
 
     private void ppItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem2MouseEntered
-        ppItem2.setBackground(Color.BLACK);
-         ppItem2.setForeground(new Color(169,119,74));
+        ppItem2.setBackground(back);
+        ppItem2.setForeground(fore);
     }//GEN-LAST:event_ppItem2MouseEntered
 
     private void ppItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem2MouseExited
-         ppItem2.setBackground(new Color(169,119,74));
-         ppItem2.setForeground(Color.BLACK);
+       ppItem2.setBackground(fore);
+       ppItem2.setForeground(back);
     }//GEN-LAST:event_ppItem2MouseExited
 
     private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed

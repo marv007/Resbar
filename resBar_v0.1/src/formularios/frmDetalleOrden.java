@@ -35,6 +35,9 @@ public class frmDetalleOrden extends javax.swing.JFrame {
  }
 
     
+    Color fore = new java.awt.Color(154,119,50);
+    Color back = new java.awt.Color(248,227,128);
+    
     public void TablaDetalleOrden(){
         // se crea un objeto de tipo JTable
         DefaultTableModel modelo = new DefaultTableModel();
@@ -117,8 +120,9 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
         jppMenu.setBackground(new java.awt.Color(191, 169, 164));
 
-        jMenuItem1.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem1.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jMenuItem1.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem1.setText("Más");
         jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -130,8 +134,9 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         });
         jppMenu.add(jMenuItem1);
 
-        jMenuItem2.setBackground(new java.awt.Color(169, 119, 74));
+        jMenuItem2.setBackground(new java.awt.Color(154, 119, 50));
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(248, 227, 128));
         jMenuItem2.setText("Menos");
         jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -221,7 +226,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblDetalleOrden);
 
         jpnlMenus.add(jScrollPane1);
-        jScrollPane1.setBounds(250, 200, 750, 380);
+        jScrollPane1.setBounds(250, 210, 750, 350);
 
         btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(btnOk.getFont().deriveFont(btnOk.getFont().getStyle() | java.awt.Font.BOLD, btnOk.getFont().getSize()+9));
@@ -233,7 +238,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
             }
         });
         jpnlMenus.add(btnOk);
-        btnOk.setBounds(920, 600, 80, 70);
+        btnOk.setBounds(920, 580, 80, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
         jpnlMenus.add(jLabel1);
@@ -351,23 +356,23 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     }//GEN-LAST:event_jpnlPrincipalMouseEntered
 
     private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
-        jMenuItem1.setBackground(Color.black);
-        jMenuItem1.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem1.setBackground(back);
+        jMenuItem1.setForeground(fore);
     }//GEN-LAST:event_jMenuItem1MouseEntered
 
     private void jMenuItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseEntered
-        jMenuItem2.setBackground(Color.black);
-        jMenuItem2.setForeground(new java.awt.Color(169,119,74));
+        jMenuItem2.setBackground(back);
+        jMenuItem2.setForeground(fore);
     }//GEN-LAST:event_jMenuItem2MouseEntered
 
     private void jMenuItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseExited
-        jMenuItem1.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem1.setForeground(Color.black);
+        jMenuItem1.setBackground(fore);
+        jMenuItem1.setForeground(back);
     }//GEN-LAST:event_jMenuItem1MouseExited
 
     private void jMenuItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseExited
-        jMenuItem2.setBackground(new java.awt.Color(169,119,74));
-        jMenuItem2.setForeground(Color.black);
+        jMenuItem2.setBackground(fore);
+        jMenuItem2.setForeground(back);
     }//GEN-LAST:event_jMenuItem2MouseExited
 
     private void jpnlMenusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpnlMenusMouseEntered
