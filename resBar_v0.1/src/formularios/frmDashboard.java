@@ -153,13 +153,20 @@ public class frmDashboard extends javax.swing.JFrame {
         });
         jppMenu.add(Cobrar);
 
+        Categorias.setFont(Categorias.getFont().deriveFont(Categorias.getFont().getStyle() | java.awt.Font.BOLD, Categorias.getFont().getSize()+9));
         Categorias.setText("Categorias");
+        Categorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CategoriasActionPerformed(evt);
+            }
+        });
         jppAdmin.add(Categorias);
 
+        Productos.setFont(Productos.getFont().deriveFont(Productos.getFont().getStyle() | java.awt.Font.BOLD, Productos.getFont().getSize()+9));
         Productos.setText("Productos");
         jppAdmin.add(Productos);
-        Productos.getAccessibleContext().setAccessibleName("Productos");
 
+        Reporte.setFont(Reporte.getFont().deriveFont(Reporte.getFont().getStyle() | java.awt.Font.BOLD, Reporte.getFont().getSize()+9));
         Reporte.setText("Reporte");
         jppAdmin.add(Reporte);
 
@@ -225,9 +232,14 @@ public class frmDashboard extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(245, 168, 12));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/settings-three-gears-interface-symbol.png"))); // NOI18N
+        jButton3.setText("Administración");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setLabel("Admin Menú");
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -242,8 +254,8 @@ public class frmDashboard extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(245, 168, 12));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/grafico-de-lineas.png"))); // NOI18N
-        jButton4.setText("Historial Ventas");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/impresora.png"))); // NOI18N
+        jButton4.setText("Imprimir");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +297,7 @@ public class frmDashboard extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -390,18 +402,11 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        frmConsultaVentas v = new frmConsultaVentas();
-        v.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if ((evt.getModifiers() & 4) !=0){
-            jppAdmin.setVisible(false);
-        }else{
-            jppAdmin.setVisible(true);
-            jppMenu.setLocation(jButton3.getLocationOnScreen());
-        }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -418,6 +423,8 @@ public class frmDashboard extends javax.swing.JFrame {
             jppMenu.setVisible(true);
             jppMenu.setLocation(evt.getLocationOnScreen());
         }
+        
+        
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
     private void AgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPActionPerformed
@@ -430,6 +437,22 @@ public class frmDashboard extends javax.swing.JFrame {
         this.dispose();
         jppMenu.setVisible(false);
     }//GEN-LAST:event_CobrarActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+       if ((evt.getModifiers() & 4) !=0){
+            jppAdmin.setVisible(false);
+        }else{
+            jppAdmin.setVisible(true);
+            jppAdmin.setLocation(evt.getLocationOnScreen());
+        }
+       
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void CategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriasActionPerformed
+        frmAgregarCategoria a = new frmAgregarCategoria();
+        a.setVisible(true);
+        jppAdmin.setVisible(false);
+    }//GEN-LAST:event_CategoriasActionPerformed
 
     
         

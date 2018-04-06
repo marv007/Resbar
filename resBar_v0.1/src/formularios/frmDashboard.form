@@ -133,19 +133,34 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="Categorias">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="Categorias" property="font" relativeSize="true" size="9"/>
+              </FontInfo>
+            </Property>
             <Property name="text" type="java.lang.String" value="Categorias"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CategoriasActionPerformed"/>
+          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="Productos">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="Productos" property="font" relativeSize="true" size="9"/>
+              </FontInfo>
+            </Property>
             <Property name="text" type="java.lang.String" value="Productos"/>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Productos"/>
-          </AccessibilityProperties>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="Reporte">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.editors2.FontEditor">
+              <FontInfo relative="true">
+                <Font bold="true" component="Reporte" property="font" relativeSize="true" size="9"/>
+              </FontInfo>
+            </Property>
             <Property name="text" type="java.lang.String" value="Reporte"/>
           </Properties>
         </MenuItem>
@@ -223,7 +238,7 @@
                           <Component id="jButton1" min="-2" pref="111" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
@@ -367,11 +382,12 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos/settings-three-gears-interface-symbol.png"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="label" type="java.lang.String" value="Admin Men&#xfa;"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
           </Events>
         </Component>
@@ -400,9 +416,9 @@
               <Font name="Tahoma" size="10" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/grafico-de-lineas.png"/>
+              <Image iconType="3" name="/iconos/impresora.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Historial Ventas"/>
+            <Property name="text" type="java.lang.String" value="Imprimir"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>

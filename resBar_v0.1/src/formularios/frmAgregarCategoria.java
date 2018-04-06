@@ -68,34 +68,28 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
         lblLogo3.setFont(new java.awt.Font("Forte", 0, 20)); // NOI18N
-        lblLogo3.setForeground(new java.awt.Color(0, 0, 0));
         lblLogo3.setText("Restaurante & Bar");
 
         lblLogo2.setFont(new java.awt.Font("Forte", 0, 50)); // NOI18N
-        lblLogo2.setForeground(new java.awt.Color(0, 0, 0));
         lblLogo2.setText("Resbar");
 
         lblUno.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        lblUno.setForeground(new java.awt.Color(0, 0, 0));
         lblUno.setText("Nombre:");
 
         txtNombre.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         txtNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         lblDos.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        lblDos.setForeground(new java.awt.Color(0, 0, 0));
         lblDos.setText("Descripción:");
 
         txaDescripcion.setColumns(20);
         txaDescripcion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        txaDescripcion.setForeground(new java.awt.Color(0, 0, 0));
         txaDescripcion.setRows(5);
         txaDescripcion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jScrollPane1.setViewportView(txaDescripcion);
 
         btnCancelar.setBackground(new java.awt.Color(245, 168, 12));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,12 +100,10 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
 
         btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        btnOk.setForeground(new java.awt.Color(0, 0, 0));
         btnOk.setText("Ok");
         btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Añadir Categoría");
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
