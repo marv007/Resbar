@@ -47,11 +47,15 @@ public class frmDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jppMenu = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        AgregarP = new javax.swing.JMenuItem();
+        Imprimir = new javax.swing.JMenuItem();
+        Modificar = new javax.swing.JMenuItem();
+        Cancel = new javax.swing.JMenuItem();
+        Cobrar = new javax.swing.JMenuItem();
+        jppAdmin = new javax.swing.JPopupMenu();
+        Categorias = new javax.swing.JMenuItem();
+        Productos = new javax.swing.JMenuItem();
+        Reporte = new javax.swing.JMenuItem();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -69,80 +73,117 @@ public class frmDashboard extends javax.swing.JFrame {
         jppMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         jppMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenuItem1.setBackground(new java.awt.Color(154, 119, 50));
-        jMenuItem1.setFont(jMenuItem1.getFont().deriveFont(jMenuItem1.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem1.getFont().getSize()+8));
-        jMenuItem1.setForeground(new java.awt.Color(248, 227, 128));
-        jMenuItem1.setText("Agregar Productos");
-        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+        AgregarP.setBackground(new java.awt.Color(154, 119, 50));
+        AgregarP.setFont(AgregarP.getFont().deriveFont(AgregarP.getFont().getStyle() | java.awt.Font.BOLD, AgregarP.getFont().getSize()+8));
+        AgregarP.setForeground(new java.awt.Color(248, 227, 128));
+        AgregarP.setText("Agregar Productos");
+        AgregarP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenuItem1MouseEntered(evt);
+                AgregarPMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jMenuItem1MouseExited(evt);
+                AgregarPMouseExited(evt);
             }
         });
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        AgregarP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                AgregarPActionPerformed(evt);
             }
         });
-        jppMenu.add(jMenuItem1);
+        jppMenu.add(AgregarP);
 
-        jMenuItem2.setBackground(new java.awt.Color(154, 119, 50));
-        jMenuItem2.setFont(jMenuItem2.getFont().deriveFont(jMenuItem2.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem2.getFont().getSize()+8));
-        jMenuItem2.setForeground(new java.awt.Color(248, 227, 128));
-        jMenuItem2.setText("Imprimir Cuenta");
-        jMenuItem2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Imprimir.setBackground(new java.awt.Color(154, 119, 50));
+        Imprimir.setFont(Imprimir.getFont().deriveFont(Imprimir.getFont().getStyle() | java.awt.Font.BOLD, Imprimir.getFont().getSize()+8));
+        Imprimir.setForeground(new java.awt.Color(248, 227, 128));
+        Imprimir.setText("Imprimir Cuenta");
+        Imprimir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenuItem2MouseEntered(evt);
+                ImprimirMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jMenuItem2MouseExited(evt);
+                ImprimirMouseExited(evt);
             }
         });
-        jppMenu.add(jMenuItem2);
+        Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImprimirActionPerformed(evt);
+            }
+        });
+        jppMenu.add(Imprimir);
 
-        jMenuItem3.setBackground(new java.awt.Color(154, 119, 50));
-        jMenuItem3.setFont(jMenuItem3.getFont().deriveFont(jMenuItem3.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem3.getFont().getSize()+8));
-        jMenuItem3.setForeground(new java.awt.Color(248, 227, 128));
-        jMenuItem3.setText("Modificar Cuenta");
-        jMenuItem3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Modificar.setBackground(new java.awt.Color(154, 119, 50));
+        Modificar.setFont(Modificar.getFont().deriveFont(Modificar.getFont().getStyle() | java.awt.Font.BOLD, Modificar.getFont().getSize()+8));
+        Modificar.setForeground(new java.awt.Color(248, 227, 128));
+        Modificar.setText("Modificar Cuenta");
+        Modificar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenuItem3MouseEntered(evt);
+                ModificarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jMenuItem3MouseExited(evt);
+                ModificarMouseExited(evt);
             }
         });
-        jppMenu.add(jMenuItem3);
+        jppMenu.add(Modificar);
 
-        jMenuItem5.setBackground(new java.awt.Color(154, 119, 50));
-        jMenuItem5.setFont(jMenuItem5.getFont().deriveFont(jMenuItem5.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem5.getFont().getSize()+8));
-        jMenuItem5.setForeground(new java.awt.Color(248, 227, 128));
-        jMenuItem5.setText("Cancelar Orden");
-        jMenuItem5.addMouseListener(new java.awt.event.MouseAdapter() {
+        Cancel.setBackground(new java.awt.Color(154, 119, 50));
+        Cancel.setFont(Cancel.getFont().deriveFont(Cancel.getFont().getStyle() | java.awt.Font.BOLD, Cancel.getFont().getSize()+8));
+        Cancel.setForeground(new java.awt.Color(248, 227, 128));
+        Cancel.setText("Cancelar Orden");
+        Cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenuItem5MouseEntered(evt);
+                CancelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jMenuItem5MouseExited(evt);
+                CancelMouseExited(evt);
             }
         });
-        jppMenu.add(jMenuItem5);
+        jppMenu.add(Cancel);
 
-        jMenuItem4.setBackground(new java.awt.Color(154, 119, 50));
-        jMenuItem4.setFont(jMenuItem4.getFont().deriveFont(jMenuItem4.getFont().getStyle() | java.awt.Font.BOLD, jMenuItem4.getFont().getSize()+8));
-        jMenuItem4.setForeground(new java.awt.Color(248, 227, 128));
-        jMenuItem4.setText("Cobrar");
-        jMenuItem4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Cobrar.setBackground(new java.awt.Color(154, 119, 50));
+        Cobrar.setFont(Cobrar.getFont().deriveFont(Cobrar.getFont().getStyle() | java.awt.Font.BOLD, Cobrar.getFont().getSize()+8));
+        Cobrar.setForeground(new java.awt.Color(248, 227, 128));
+        Cobrar.setText("Cobrar");
+        Cobrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jMenuItem4MouseEntered(evt);
+                CobrarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jMenuItem4MouseExited(evt);
+                CobrarMouseExited(evt);
             }
         });
-        jppMenu.add(jMenuItem4);
+        Cobrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CobrarActionPerformed(evt);
+            }
+        });
+        jppMenu.add(Cobrar);
+
+        Categorias.setFont(Categorias.getFont().deriveFont(Categorias.getFont().getStyle() | java.awt.Font.BOLD, Categorias.getFont().getSize()+9));
+        Categorias.setText("Categorias");
+        Categorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CategoriasActionPerformed(evt);
+            }
+        });
+        jppAdmin.add(Categorias);
+
+        Productos.setFont(Productos.getFont().deriveFont(Productos.getFont().getStyle() | java.awt.Font.BOLD, Productos.getFont().getSize()+9));
+        Productos.setText("Productos");
+        Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosActionPerformed(evt);
+            }
+        });
+        jppAdmin.add(Productos);
+
+        Reporte.setFont(Reporte.getFont().deriveFont(Reporte.getFont().getStyle() | java.awt.Font.BOLD, Reporte.getFont().getSize()+9));
+        Reporte.setText("Reporte");
+        Reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReporteActionPerformed(evt);
+            }
+        });
+        jppAdmin.add(Reporte);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1");
@@ -206,9 +247,14 @@ public class frmDashboard extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(245, 168, 12));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/settings-three-gears-interface-symbol.png"))); // NOI18N
+        jButton3.setText("Administración");
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setLabel("Admin Menú");
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -223,8 +269,8 @@ public class frmDashboard extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(245, 168, 12));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/grafico-de-lineas.png"))); // NOI18N
-        jButton4.setText("Historial Ventas");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/impresora.png"))); // NOI18N
+        jButton4.setText("Imprimir");
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -266,7 +312,7 @@ public class frmDashboard extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -297,11 +343,11 @@ public class frmDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
+                        .addGap(41, 41, 41)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(133, Short.MAX_VALUE))
         );
 
@@ -310,57 +356,57 @@ public class frmDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
-        jMenuItem1.setBackground(back);
-        jMenuItem1.setForeground(fore);
-    }//GEN-LAST:event_jMenuItem1MouseEntered
+    private void AgregarPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPMouseEntered
+        AgregarP.setBackground(back);
+        AgregarP.setForeground(fore);
+    }//GEN-LAST:event_AgregarPMouseEntered
 
-    private void jMenuItem1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseExited
-        jMenuItem1.setBackground(fore);
-        jMenuItem1.setForeground(back);
-    }//GEN-LAST:event_jMenuItem1MouseExited
+    private void AgregarPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPMouseExited
+        AgregarP.setBackground(fore);
+        AgregarP.setForeground(back);
+    }//GEN-LAST:event_AgregarPMouseExited
 
-    private void jMenuItem2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseExited
-        jMenuItem2.setBackground(fore);
-        jMenuItem2.setForeground(back);
-    }//GEN-LAST:event_jMenuItem2MouseExited
+    private void ImprimirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirMouseExited
+        Imprimir.setBackground(fore);
+        Imprimir.setForeground(back);
+    }//GEN-LAST:event_ImprimirMouseExited
 
-    private void jMenuItem2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem2MouseEntered
-        jMenuItem2.setBackground(back);
-        jMenuItem2.setForeground(fore);
+    private void ImprimirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImprimirMouseEntered
+        Imprimir.setBackground(back);
+        Imprimir.setForeground(fore);
         
         
-    }//GEN-LAST:event_jMenuItem2MouseEntered
+    }//GEN-LAST:event_ImprimirMouseEntered
 
-    private void jMenuItem3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseExited
-        jMenuItem3.setBackground(fore);
-        jMenuItem3.setForeground(back);
-    }//GEN-LAST:event_jMenuItem3MouseExited
+    private void ModificarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarMouseExited
+        Modificar.setBackground(fore);
+        Modificar.setForeground(back);
+    }//GEN-LAST:event_ModificarMouseExited
 
-    private void jMenuItem3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem3MouseEntered
-        jMenuItem3.setBackground(back);
-        jMenuItem3.setForeground(fore);
-    }//GEN-LAST:event_jMenuItem3MouseEntered
+    private void ModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ModificarMouseEntered
+        Modificar.setBackground(back);
+        Modificar.setForeground(fore);
+    }//GEN-LAST:event_ModificarMouseEntered
 
-    private void jMenuItem5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem5MouseExited
-        jMenuItem5.setBackground(fore);
-        jMenuItem5.setForeground(back);
-    }//GEN-LAST:event_jMenuItem5MouseExited
+    private void CancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseExited
+        Cancel.setBackground(fore);
+        Cancel.setForeground(back);
+    }//GEN-LAST:event_CancelMouseExited
 
-    private void jMenuItem5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem5MouseEntered
-        jMenuItem5.setBackground(back);
-        jMenuItem5.setForeground(fore);
-    }//GEN-LAST:event_jMenuItem5MouseEntered
+    private void CancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelMouseEntered
+        Cancel.setBackground(back);
+        Cancel.setForeground(fore);
+    }//GEN-LAST:event_CancelMouseEntered
 
-    private void jMenuItem4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem4MouseExited
-        jMenuItem4.setBackground(fore);
-        jMenuItem4.setForeground(back);
-    }//GEN-LAST:event_jMenuItem4MouseExited
+    private void CobrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CobrarMouseExited
+        Cobrar.setBackground(fore);
+        Cobrar.setForeground(back);
+    }//GEN-LAST:event_CobrarMouseExited
 
-    private void jMenuItem4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem4MouseEntered
-        jMenuItem4.setBackground(back);
-        jMenuItem4.setForeground(fore);
-    }//GEN-LAST:event_jMenuItem4MouseEntered
+    private void CobrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CobrarMouseEntered
+        Cobrar.setBackground(back);
+        Cobrar.setForeground(fore);
+    }//GEN-LAST:event_CobrarMouseEntered
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
         jppMenu.setVisible(false);
@@ -371,15 +417,16 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        frmConsultaVentas v = new frmConsultaVentas();
-        v.setVisible(true);
+
+        
+        frmTicket t = new frmTicket();
+        t.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        frmActualizarMenu v = new frmActualizarMenu();
-        v.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -396,11 +443,57 @@ public class frmDashboard extends javax.swing.JFrame {
             jppMenu.setVisible(true);
             jppMenu.setLocation(evt.getLocationOnScreen());
         }
+        
+        
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void AgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_AgregarPActionPerformed
+
+    private void CobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CobrarActionPerformed
+        frmCobrar cobro = new frmCobrar();
+        cobro.setVisible(true);
+        this.dispose();
+        jppMenu.setVisible(false);
+    }//GEN-LAST:event_CobrarActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+       if ((evt.getModifiers() & 4) !=0){
+            jppAdmin.setVisible(false);
+        }else{
+            jppAdmin.setVisible(true);
+            jppAdmin.setLocation(evt.getLocationOnScreen());
+        }
+       
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void CategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoriasActionPerformed
+        frmAgregarCategoria a = new frmAgregarCategoria();
+        a.setVisible(true);
+        jppAdmin.setVisible(false);
+    }//GEN-LAST:event_CategoriasActionPerformed
+
+    private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
+       frmConsultaVentas ventas = new frmConsultaVentas();
+       ventas.setVisible(true);
+       this.dispose();
+       jppAdmin.setVisible(false);
+    }//GEN-LAST:event_ReporteActionPerformed
+
+    private void ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosActionPerformed
+        frmActualizarMenu v = new frmActualizarMenu();
+        v.setVisible(true);
+        this.dispose();
+       jppAdmin.setVisible(false);
+    }//GEN-LAST:event_ProductosActionPerformed
+
+    private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
+        frmTicket t = new frmTicket();
+        t.setVisible(true);
+        this.dispose();
+        jppMenu.setVisible(false);
+    }//GEN-LAST:event_ImprimirActionPerformed
 
     
         
@@ -487,6 +580,14 @@ public class frmDashboard extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AgregarP;
+    private javax.swing.JMenuItem Cancel;
+    private javax.swing.JMenuItem Categorias;
+    private javax.swing.JMenuItem Cobrar;
+    private javax.swing.JMenuItem Imprimir;
+    private javax.swing.JMenuItem Modificar;
+    private javax.swing.JMenuItem Productos;
+    private javax.swing.JMenuItem Reporte;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -495,14 +596,10 @@ public class frmDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JPopupMenu jppAdmin;
     private javax.swing.JPopupMenu jppMenu;
     private javax.swing.JTable tblOrdenes;
     // End of variables declaration//GEN-END:variables
