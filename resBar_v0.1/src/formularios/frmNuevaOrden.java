@@ -11,6 +11,10 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -39,17 +43,21 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         lblFecha.setText(fecha());
         hilo =new Thread (this);
         hilo.start();
+       
         setVisible(true);
         
-        tblDetalleOrden.setDefaultEditor(Object.class, null);
-        tblDetalleOrden.getColumnModel().getColumn(1).setPreferredWidth(5);       
+        tblDetalle.setDefaultEditor(Object.class, null);
+       // tblDetalleOrden.getColumnModel().getColumn(1).setPreferredWidth(5);       
         encabezado();
+        
+        this.jMenuItem1.setForeground(fore);
+        this.jMenuItem2.setBackground(back);
         
         
     }
     
-    Color fore = new java.awt.Color(154,119,50);
-    Color back = new java.awt.Color(248,227,128);
+    Color back = new java.awt.Color(154,119,50);
+    Color fore = new java.awt.Color(248,227,128);
     public void hora(){
     Calendar calendario= new GregorianCalendar();
     Date horaActual = new Date();
@@ -71,9 +79,49 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     }
     
     public void encabezado(){
-       tblDetalleOrden.getTableHeader().setFont(new Font("", Font.BOLD, 20));
-       tblDetalleOrden.getTableHeader().setBackground(new java.awt.Color(116,85,31));
-       tblDetalleOrden.getTableHeader().setForeground(new java.awt.Color(245,168,12));
+        
+       //crear y llenar el objeto tabla
+       DefaultTableModel modelo = new DefaultTableModel();
+      
+       //Agregar columna
+       modelo.addColumn("Producto");
+       modelo.addColumn("Cantidad");
+       
+       //agregar filas a la tabla
+        modelo.addRow(new Object[]{"Combo alitas barbacoa","2"});
+        modelo.addRow(new Object[]{"Botella con agua","2"});
+        modelo.addRow(new Object[]{"Ensalada cesar","1"});
+        modelo.addRow(new Object[]{"Soda","1"});
+        
+        //añadir modelo a la tabla
+        this.tblDetalle.setModel(modelo);
+        
+        //tamaño de las celdas
+        this.tblDetalle.setRowHeight(40);
+        
+        //editor de la tabla
+        this.tblDetalle.setDefaultEditor(Object.class, null);
+       
+        //ordenar la tabla
+       this.tblDetalle.setRowSorter(new TableRowSorter(modelo));
+       
+       //color de la tabla
+       tblDetalle.getTableHeader().setFont(new Font("", Font.BOLD, 20));
+       tblDetalle.getTableHeader().setBackground(new java.awt.Color(116,85,31));
+       tblDetalle.getTableHeader().setForeground(new java.awt.Color(245,168,12));
+       
+       //Tamaño de las columnas
+       this.tblDetalle.getColumnModel().getColumn(0).setPreferredWidth(300);
+       this.tblDetalle.getColumnModel().getColumn(1).setPreferredWidth(5);
+       
+       //centrar texto de la tabla
+       DefaultTableCellRenderer modeloCentrar = new DefaultTableCellRenderer();
+       modeloCentrar.setHorizontalAlignment(SwingConstants.CENTER);
+       this.tblDetalle.getColumnModel().getColumn(1).setCellRenderer(modeloCentrar);
+       
+       //ordenar tabla por columnas en ascendente
+       this.tblDetalle.setRowSorter(new TableRowSorter(modelo));
+      
     }
 
     /**
@@ -90,22 +138,25 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnEnviarOrden = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtMesa = new javax.swing.JTextField();
+        txtMesero = new javax.swing.JTextField();
+        txtCliente = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDetalleOrden = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblDetalle = new javax.swing.JTable();
+        btnAgregarProductos = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
         jppMenu.setBackground(new java.awt.Color(191, 169, 164));
@@ -157,187 +208,125 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
                 jPanel1MouseEntered(evt);
             }
         });
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(245, 168, 12));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
-        jButton2.setText("Enviar Orden");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarOrden.setBackground(new java.awt.Color(245, 168, 12));
+        btnEnviarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
+        btnEnviarOrden.setText("Enviar Orden");
+        btnEnviarOrden.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEnviarOrden.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEnviarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEnviarOrdenActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEnviarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 111, -1));
 
         lblFecha.setFont(lblFecha.getFont().deriveFont(lblFecha.getFont().getSize()+9f));
         lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblFecha.setText("00/00/00");
+        jPanel1.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 117, -1));
 
         jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getStyle() | java.awt.Font.BOLD, jLabel1.getFont().getSize()+9));
         jLabel1.setText("Mesa:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 140, -1, -1));
 
         lblHora.setFont(lblHora.getFont().deriveFont(lblHora.getFont().getSize()+9f));
         lblHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblHora.setText("00:00:00");
+        jPanel1.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, 101, -1));
 
         jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getStyle() | java.awt.Font.BOLD, jLabel2.getFont().getSize()+9));
         jLabel2.setText("Mesero:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 248, -1, -1));
 
         jLabel3.setFont(jLabel3.getFont().deriveFont(jLabel3.getFont().getStyle() | java.awt.Font.BOLD, jLabel3.getFont().getSize()+9));
         jLabel3.setText("Cliente:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 194, -1, -1));
 
-        jTextField1.setFont(jTextField1.getFont().deriveFont(jTextField1.getFont().getSize()+9f));
+        txtMesa.setFont(txtMesa.getFont().deriveFont(txtMesa.getFont().getSize()+9f));
+        jPanel1.add(txtMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 137, 160, 30));
 
-        jTextField2.setFont(jTextField2.getFont().deriveFont(jTextField2.getFont().getSize()+9f));
+        txtMesero.setFont(txtMesero.getFont().deriveFont(txtMesero.getFont().getSize()+9f));
+        jPanel1.add(txtMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 245, 320, 30));
 
-        jTextField3.setFont(jTextField3.getFont().deriveFont(jTextField3.getFont().getSize()+9f));
+        txtCliente.setFont(txtCliente.getFont().deriveFont(txtCliente.getFont().getSize()+9f));
+        jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 194, 320, 30));
 
-        tblDetalleOrden.setBackground(new java.awt.Color(248, 227, 128));
-        tblDetalleOrden.setFont(tblDetalleOrden.getFont().deriveFont(tblDetalleOrden.getFont().getSize()+9f));
-        tblDetalleOrden.setModel(new javax.swing.table.DefaultTableModel(
+        tblDetalle.setBackground(new java.awt.Color(248, 227, 128));
+        tblDetalle.setFont(tblDetalle.getFont().deriveFont(tblDetalle.getFont().getSize()+9f));
+        tblDetalle.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"COMBO ALITAS BARBACOA", "2"},
-                {"BOTELLA CON AGUA", "2"},
-                {"ENSALADA CESAR", "1"},
-                {"SODA", "1"},
-                {null, null},
-                {null, null},
-                {null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "PRODUCTO", "CANTIDAD"
+
             }
         ));
-        tblDetalleOrden.setGridColor(new java.awt.Color(0, 0, 0));
-        tblDetalleOrden.setRowHeight(30);
-        tblDetalleOrden.setSelectionBackground(new java.awt.Color(154, 119, 50));
-        tblDetalleOrden.setSelectionForeground(new java.awt.Color(248, 227, 128));
-        tblDetalleOrden.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblDetalle.setGridColor(new java.awt.Color(0, 0, 0));
+        tblDetalle.setRowHeight(30);
+        tblDetalle.setSelectionBackground(new java.awt.Color(154, 119, 50));
+        tblDetalle.setSelectionForeground(new java.awt.Color(248, 227, 128));
+        tblDetalle.getTableHeader().setResizingAllowed(false);
+        tblDetalle.getTableHeader().setReorderingAllowed(false);
+        tblDetalle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblDetalleOrdenMouseClicked(evt);
+                tblDetalleMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblDetalleOrden);
+        jScrollPane1.setViewportView(tblDetalle);
 
-        jButton1.setBackground(new java.awt.Color(245, 168, 12));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
-        jButton1.setText("Agregar Productos");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 328, 620, 370));
+
+        btnAgregarProductos.setBackground(new java.awt.Color(245, 168, 12));
+        btnAgregarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
+        btnAgregarProductos.setText("Agregar Productos");
+        btnAgregarProductos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAgregarProductos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAgregarProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarProductosActionPerformed(evt);
             }
         });
+        jPanel1.add(btnAgregarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, -1, -1));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo_116x116.png"))); // NOI18N
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 0, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
         jLabel4.setText("Resbar");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 0, -1, 53));
 
         jLabel5.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel5.setText("Detalle Orden");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 294, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel6.setText("Restaurante & Bar");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 69, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblFondo)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(95, 95, 95)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 879, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(202, 202, 202)
-                    .addComponent(jLabel6)
-                    .addContainerGap(638, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblFecha)
-                            .addComponent(lblHora)))
-                    .addComponent(lblFondo)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(7, 7, 7))))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(69, 69, 69)
-                    .addComponent(jLabel6)
-                    .addContainerGap(665, Short.MAX_VALUE)))
-        );
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 1030, 670));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 320, 300));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel7.setText("Comentarios");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 294, 146, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 780));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -357,20 +346,20 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductosActionPerformed
                  frmDetalleOrden detalleOrden = new frmDetalleOrden();
                  detalleOrden.setVisible(true);
                  this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAgregarProductosActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         new frmDashboard().setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnEnviarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarOrdenActionPerformed
         new frmDashboard().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEnviarOrdenActionPerformed
 
     private void jMenuItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseEntered
         jMenuItem1.setBackground(back);
@@ -392,14 +381,14 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jMenuItem2.setForeground(back);
     }//GEN-LAST:event_jMenuItem2MouseExited
 
-    private void tblDetalleOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDetalleOrdenMouseClicked
+    private void tblDetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDetalleMouseClicked
         if ((evt.getModifiers() & 2) !=0){
          jppMenu.setVisible(false);        
          }else{
         jppMenu.setVisible(true);
         jppMenu.setLocation(evt.getLocationOnScreen());
          }
-    }//GEN-LAST:event_tblDetalleOrdenMouseClicked
+    }//GEN-LAST:event_tblDetalleMouseClicked
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
         jppMenu.setVisible(false);
@@ -449,27 +438,30 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAgregarProductos;
+    private javax.swing.JButton btnEnviarOrden;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPopupMenu jppMenu;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblHora;
-    private javax.swing.JTable tblDetalleOrden;
+    private javax.swing.JTable tblDetalle;
+    private javax.swing.JTextField txtCliente;
+    private javax.swing.JTextField txtMesa;
+    private javax.swing.JTextField txtMesero;
     // End of variables declaration//GEN-END:variables
 }
