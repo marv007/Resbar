@@ -129,6 +129,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         ppUno.setForeground(new java.awt.Color(248, 227, 128));
         ppUno.setText("Editar Categoría");
         ppUno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ppUnoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 ppUnoMouseExited(evt);
             }
@@ -504,7 +507,14 @@ public class frmActualizarMenu extends javax.swing.JFrame {
  frmAgregarCategoria categ = new frmAgregarCategoria();
  categ.setVisible(true);
  
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ppUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppUnoMouseClicked
+        frmAgregarCategoria cat = new frmAgregarCategoria();
+        cat.setVisible(true);
+        ppActCat.setVisible(false);
+    }//GEN-LAST:event_ppUnoMouseClicked
 
     /**
      * @param args the command line arguments
