@@ -24,8 +24,8 @@ public class frmDetalleOrden extends javax.swing.JFrame {
      * Creates new form frmDetalleOrden
      */
     
-         Color fore = new Color(0,0,0);
-         Color back = new Color(0,0,0,100);
+    Color back = new java.awt.Color(154,119,50);
+    Color fore = new java.awt.Color(248,227,128);
           
     public frmDetalleOrden() {
         initComponents();

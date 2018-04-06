@@ -56,8 +56,8 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         
     }
     
-    Color fore = new Color(0,0,0);
-    Color back = new Color(0,0,0,100);
+    Color back = new java.awt.Color(154,119,50);
+    Color fore = new java.awt.Color(248,227,128);
     public void hora(){
     Calendar calendario= new GregorianCalendar();
     Date horaActual = new Date();
