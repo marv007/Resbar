@@ -248,9 +248,19 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         jPanel1.add(txtMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 137, 160, 30));
 
         txtMesero.setFont(txtMesero.getFont().deriveFont(txtMesero.getFont().getSize()+9f));
+        txtMesero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMeseroKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 245, 320, 30));
 
         txtCliente.setFont(txtCliente.getFont().deriveFont(txtCliente.getFont().getSize()+9f));
+        txtCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtClienteKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 194, 320, 30));
 
         tblDetalle.setBackground(new java.awt.Color(248, 227, 128));
@@ -393,6 +403,18 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
         jppMenu.setVisible(false);
     }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void txtClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClienteKeyTyped
+       char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z')&&(c<'A' || c>'Z')&&(c!=' '))  evt.consume();
+    }//GEN-LAST:event_txtClienteKeyTyped
+
+    private void txtMeseroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMeseroKeyTyped
+       char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z')&&(c<'A' || c>'Z')&&(c!=' '))  evt.consume();
+    }//GEN-LAST:event_txtMeseroKeyTyped
 
     /**
      * @param args the command line arguments

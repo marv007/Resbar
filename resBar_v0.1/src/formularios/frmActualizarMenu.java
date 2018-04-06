@@ -310,7 +310,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnPaneTablaLayout.createSequentialGroup()
-                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -444,9 +444,34 @@ public class frmActualizarMenu extends javax.swing.JFrame {
           if ((evt.getModifiers() & 4) !=0){
          ppActCat.setVisible(false);        
          }else{
-        ppActCat.setVisible(true);
-        ppActCat.setLocation(evt.getLocationOnScreen());
+          ppActCat.setVisible(true);
+          ppActCat.setLocation(evt.getLocationOnScreen());
          }
+          //AL seleccionar item se genera texto en textfield Buscar
+          if(lsLista.getSelectedIndex()==0){
+          lblCabecera.setText("Entradas");
+          txtBuscar.setText("Buscar Entradas...");
+          }
+          if(lsLista.getSelectedIndex()==1){
+          lblCabecera.setText("Carnes");
+          txtBuscar.setText("Buscar Carnes...");
+          }
+          if(lsLista.getSelectedIndex()==2){
+          lblCabecera.setText("Pescados Y Mariscos");
+          txtBuscar.setText("Buscar Pescados y Mariscos...");
+          }
+          if(lsLista.getSelectedIndex()==3){
+          lblCabecera.setText("Sopas");
+          txtBuscar.setText("Buscar Sopas...");
+          }
+          if(lsLista.getSelectedIndex()==4){
+          lblCabecera.setText("Bebidas");
+          txtBuscar.setText("Buscar Bebidas...");
+          }
+          if(lsLista.getSelectedIndex()==5){
+          lblCabecera.setText("Postres");
+          txtBuscar.setText("Buscar Postres...");
+          }
     }//GEN-LAST:event_lsListaMouseClicked
 
     private void ppUnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppUnoMouseEntered
