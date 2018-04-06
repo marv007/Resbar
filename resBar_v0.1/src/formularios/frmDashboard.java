@@ -104,6 +104,11 @@ public class frmDashboard extends javax.swing.JFrame {
                 ImprimirMouseExited(evt);
             }
         });
+        Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ImprimirActionPerformed(evt);
+            }
+        });
         jppMenu.add(Imprimir);
 
         Modificar.setBackground(new java.awt.Color(154, 119, 50));
@@ -164,10 +169,20 @@ public class frmDashboard extends javax.swing.JFrame {
 
         Productos.setFont(Productos.getFont().deriveFont(Productos.getFont().getStyle() | java.awt.Font.BOLD, Productos.getFont().getSize()+9));
         Productos.setText("Productos");
+        Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosActionPerformed(evt);
+            }
+        });
         jppAdmin.add(Productos);
 
         Reporte.setFont(Reporte.getFont().deriveFont(Reporte.getFont().getStyle() | java.awt.Font.BOLD, Reporte.getFont().getSize()+9));
         Reporte.setText("Reporte");
+        Reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReporteActionPerformed(evt);
+            }
+        });
         jppAdmin.add(Reporte);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -402,6 +417,11 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        
+        frmTicket t = new frmTicket();
+        t.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -453,6 +473,27 @@ public class frmDashboard extends javax.swing.JFrame {
         a.setVisible(true);
         jppAdmin.setVisible(false);
     }//GEN-LAST:event_CategoriasActionPerformed
+
+    private void ReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReporteActionPerformed
+       frmConsultaVentas ventas = new frmConsultaVentas();
+       ventas.setVisible(true);
+       this.dispose();
+       jppAdmin.setVisible(false);
+    }//GEN-LAST:event_ReporteActionPerformed
+
+    private void ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosActionPerformed
+        frmActualizarMenu v = new frmActualizarMenu();
+        v.setVisible(true);
+        this.dispose();
+       jppAdmin.setVisible(false);
+    }//GEN-LAST:event_ProductosActionPerformed
+
+    private void ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImprimirActionPerformed
+        frmTicket t = new frmTicket();
+        t.setVisible(true);
+        this.dispose();
+        jppMenu.setVisible(false);
+    }//GEN-LAST:event_ImprimirActionPerformed
 
     
         
