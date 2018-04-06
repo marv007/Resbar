@@ -24,6 +24,13 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         
+        //foregroung negro
+        lblLogo2.setForeground(Color.BLACK);
+        lblLogo3.setForeground(Color.BLACK);
+        lblUno.setForeground(Color.BLACK);
+        lblDos.setForeground(Color.BLACK);
+        
+        
         //pane tranparente
         pnFondo.setBackground(new Color(154,119,50,240));
     }
@@ -90,6 +97,7 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
 
         btnCancelar.setBackground(new java.awt.Color(245, 168, 12));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,16 +108,12 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
 
         btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(0, 0, 0));
         btnOk.setText("Ok");
         btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-<<<<<<< HEAD
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Categoría");
-=======
-        jLabel1.setText("Añadir Categoría");
->>>>>>> 8d18a1f6d3165b7300b3267cf3722d58d88a9f65
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -142,7 +146,7 @@ public class frmAgregarCategoria extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnFondoLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
