@@ -9,6 +9,7 @@ import clases.MiRender;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -43,15 +44,12 @@ public class frmActualizarMenu extends javax.swing.JFrame {
      lblLogo3.setForeground(Color.BLACK);
      lblEncabezado.setForeground(Color.BLACK);
      
-     //Botones
-     btnEntradas.setForeground(Color.BLACK);
-     btnCarnes.setForeground(Color.BLACK);
-     btnPescadosY.setForeground(Color.BLACK);
-     btnSopas.setForeground(Color.BLACK);
-     btnPostres.setForeground(Color.BLACK);
-     btnBebidas.setForeground(Color.BLACK);
-     btnAñadir.setForeground(Color.BLACK);
-     btnOk.setForeground(Color.BLACK);
+     //Lista
+     DefaultListCellRenderer cellRenderer = (DefaultListCellRenderer)lsLista.getCellRenderer();
+     cellRenderer.setHorizontalAlignment(SwingConstants .CENTER);
+     lsLista.setFixedCellHeight(40);
+     
+     
      
        
      
@@ -73,17 +71,16 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         ppMenuAct = new javax.swing.JPopupMenu();
         ppItem1 = new javax.swing.JMenuItem();
         ppItem2 = new javax.swing.JMenuItem();
+        ppActCat = new javax.swing.JPopupMenu();
+        ppUno = new javax.swing.JMenuItem();
+        ppDos = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         btnAñadir = new javax.swing.JButton();
         btnOk = new javax.swing.JButton();
         pnPane1 = new javax.swing.JPanel();
-        btnEntradas = new javax.swing.JButton();
-        btnCarnes = new javax.swing.JButton();
-        btnPescadosY = new javax.swing.JButton();
-        btnPostres = new javax.swing.JButton();
-        btnBebidas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnSopas = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lsLista = new javax.swing.JList<>();
         pnPaneTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbTabla = new javax.swing.JTable();
@@ -94,17 +91,21 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         lblLogo2 = new javax.swing.JLabel();
         lblLogo3 = new javax.swing.JLabel();
         lblEncabezado = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         ppItem1.setBackground(new java.awt.Color(154, 119, 50));
         ppItem1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         ppItem1.setForeground(new java.awt.Color(248, 227, 128));
         ppItem1.setText("Editar Producto");
         ppItem1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ppItem1MouseEntered(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ppItem1MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 ppItem1MouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ppItem1MouseEntered(evt);
             }
         });
         ppMenuAct.add(ppItem1);
@@ -123,6 +124,34 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         });
         ppMenuAct.add(ppItem2);
 
+        ppUno.setBackground(new java.awt.Color(154, 119, 50));
+        ppUno.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        ppUno.setForeground(new java.awt.Color(248, 227, 128));
+        ppUno.setText("Editar Categoría");
+        ppUno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ppUnoMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ppUnoMouseEntered(evt);
+            }
+        });
+        ppActCat.add(ppUno);
+
+        ppDos.setBackground(new java.awt.Color(154, 119, 50));
+        ppDos.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
+        ppDos.setForeground(new java.awt.Color(248, 227, 128));
+        ppDos.setText("Eliminar Categoría");
+        ppDos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ppDosMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ppDosMouseEntered(evt);
+            }
+        });
+        ppActCat.add(ppDos);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Administrar Menú");
 
@@ -137,8 +166,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         btnAñadir.setBackground(new java.awt.Color(245, 168, 12));
         btnAñadir.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAñadir.setForeground(new java.awt.Color(0, 0, 0));
         btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
-        btnAñadir.setText("Añadir");
+        btnAñadir.setText("Producto");
         btnAñadir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnAñadir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAñadir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -152,6 +182,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
         btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(0, 0, 0));
         btnOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/arrow_right.png"))); // NOI18N
         btnOk.setText("OK");
         btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
@@ -168,106 +199,48 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPane1.setBackground(new java.awt.Color(255, 255, 255));
         pnPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0)));
 
-        btnEntradas.setBackground(new java.awt.Color(245, 168, 12));
-        btnEntradas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnEntradas.setText("Entradas");
-        btnEntradas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnEntradas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntradasActionPerformed(evt);
-            }
-        });
-
-        btnCarnes.setBackground(new java.awt.Color(245, 168, 12));
-        btnCarnes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnCarnes.setText("Carnes");
-        btnCarnes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnCarnes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCarnesActionPerformed(evt);
-            }
-        });
-
-        btnPescadosY.setBackground(new java.awt.Color(245, 168, 12));
-        btnPescadosY.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
-        btnPescadosY.setText("Pescados y Mariscos");
-        btnPescadosY.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnPescadosY.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPescadosYActionPerformed(evt);
-            }
-        });
-
-        btnPostres.setBackground(new java.awt.Color(245, 168, 12));
-        btnPostres.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnPostres.setText("Postres");
-        btnPostres.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnPostres.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPostresActionPerformed(evt);
-            }
-        });
-
-        btnBebidas.setBackground(new java.awt.Color(245, 168, 12));
-        btnBebidas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnBebidas.setText("Bebidas");
-        btnBebidas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnBebidas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBebidasActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Free Chancery", 1, 32)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Categoría:");
 
-        btnSopas.setBackground(new java.awt.Color(245, 168, 12));
-        btnSopas.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnSopas.setText("Sopas");
-        btnSopas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
-        btnSopas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSopasActionPerformed(evt);
+        lsLista.setBackground(new java.awt.Color(248, 227, 128));
+        lsLista.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
+        lsLista.setFont(new java.awt.Font("Lato Black", 1, 24)); // NOI18N
+        lsLista.setForeground(new java.awt.Color(0, 0, 0));
+        lsLista.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Entradas", "Carnes", "Pescados & Mariscos", "Sopas", "Bebidas", "Postres" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        lsLista.setSelectionBackground(new java.awt.Color(245, 168, 12));
+        lsLista.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        lsLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lsListaMouseClicked(evt);
             }
         });
+        jScrollPane2.setViewportView(lsLista);
 
         javax.swing.GroupLayout pnPane1Layout = new javax.swing.GroupLayout(pnPane1);
         pnPane1.setLayout(pnPane1Layout);
         pnPane1Layout.setHorizontalGroup(
             pnPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEntradas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCarnes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPescadosY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPostres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBebidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSopas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(71, 71, 71))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnPane1Layout.setVerticalGroup(
             pnPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(btnEntradas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCarnes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPescadosY, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSopas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPostres, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBebidas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -277,7 +250,9 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         pnPaneTabla.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), java.awt.Color.black, java.awt.Color.black));
 
         tbTabla.setBackground(new java.awt.Color(248, 227, 128));
+        tbTabla.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black, java.awt.Color.black));
         tbTabla.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        tbTabla.setForeground(new java.awt.Color(0, 0, 0));
         tbTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -365,7 +340,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         lblLogo2.setBounds(700, 30, 190, 50);
 
         lblLogo3.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
-        lblLogo3.setText("Restaurante y Bar");
+        lblLogo3.setText("Restaurante & Bar");
         jPanel1.add(lblLogo3);
         lblLogo3.setBounds(690, 80, 210, 30);
 
@@ -374,6 +349,22 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         lblEncabezado.setText("Administrar Menú");
         jPanel1.add(lblEncabezado);
         lblEncabezado.setBounds(40, 30, 520, 60);
+
+        jButton1.setBackground(new java.awt.Color(245, 168, 12));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
+        jButton1.setText("Categoría");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(30, 630, 120, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -406,6 +397,7 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
     private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
          ppMenuAct.setVisible(false);
+         ppActCat.setVisible(false);
     }//GEN-LAST:event_jPanel1MouseEntered
 
     private void ppItem1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseEntered
@@ -433,31 +425,6 @@ public class frmActualizarMenu extends javax.swing.JFrame {
        ppItem2.setForeground(back);
     }//GEN-LAST:event_ppItem2MouseExited
 
-    private void btnEntradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntradasActionPerformed
-       lblCabecera.setText("Entradas");
-       txtBuscar.setText("Buscar Entradas...");
-    }//GEN-LAST:event_btnEntradasActionPerformed
-
-    private void btnCarnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarnesActionPerformed
-        lblCabecera.setText("Carnes");
-        txtBuscar.setText("Buscar Carnes...");
-    }//GEN-LAST:event_btnCarnesActionPerformed
-
-    private void btnPescadosYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPescadosYActionPerformed
-        lblCabecera.setText("Pescados Y Mariscos");
-        txtBuscar.setText("Buscar Pescados Y Mariscos...");
-    }//GEN-LAST:event_btnPescadosYActionPerformed
-
-    private void btnPostresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostresActionPerformed
-        lblCabecera.setText("Postres");
-        txtBuscar.setText("Buscar Postres...");
-    }//GEN-LAST:event_btnPostresActionPerformed
-
-    private void btnBebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBebidasActionPerformed
-       lblCabecera.setText("Bebidas");
-       txtBuscar.setText("Buscar Bebidas...");
-    }//GEN-LAST:event_btnBebidasActionPerformed
-
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
        frmDashboard board = new frmDashboard();
        board.setVisible(true);
@@ -473,10 +440,46 @@ public class frmActualizarMenu extends javax.swing.JFrame {
         agregar.setVisible(true);
     }//GEN-LAST:event_btnAñadirActionPerformed
 
-    private void btnSopasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSopasActionPerformed
-        lblCabecera.setText("Sopas");
-        txtBuscar.setText("Buscar Sopas...");
-    }//GEN-LAST:event_btnSopasActionPerformed
+    private void lsListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsListaMouseClicked
+          if ((evt.getModifiers() & 4) !=0){
+         ppActCat.setVisible(false);        
+         }else{
+        ppActCat.setVisible(true);
+        ppActCat.setLocation(evt.getLocationOnScreen());
+         }
+    }//GEN-LAST:event_lsListaMouseClicked
+
+    private void ppUnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppUnoMouseEntered
+        ppUno.setBackground(back);
+        ppUno.setForeground(fore);
+    }//GEN-LAST:event_ppUnoMouseEntered
+
+    private void ppUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppUnoMouseExited
+        ppUno.setBackground(fore);
+        ppUno.setForeground(back);
+    }//GEN-LAST:event_ppUnoMouseExited
+
+    private void ppDosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppDosMouseEntered
+        ppDos.setBackground(back);
+        ppDos.setForeground(fore);
+    }//GEN-LAST:event_ppDosMouseEntered
+
+    private void ppDosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppDosMouseExited
+        ppDos.setBackground(fore);
+        ppDos.setForeground(back);
+    }//GEN-LAST:event_ppDosMouseExited
+
+    private void ppItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ppItem1MouseClicked
+         frmAgregarProductos agregar = new frmAgregarProductos();
+        agregar.setVisible(true);
+        ppMenuAct.setVisible(false);
+    }//GEN-LAST:event_ppItem1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+ frmAgregarCategoria categ = new frmAgregarCategoria();
+ categ.setVisible(true);
+ 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -562,27 +565,27 @@ public class frmActualizarMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;
-    private javax.swing.JButton btnBebidas;
-    private javax.swing.JButton btnCarnes;
-    private javax.swing.JButton btnEntradas;
     private javax.swing.JButton btnOk;
-    private javax.swing.JButton btnPescadosY;
-    private javax.swing.JButton btnPostres;
-    private javax.swing.JButton btnSopas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCabecera;
     private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblLogo2;
     private javax.swing.JLabel lblLogo3;
+    private javax.swing.JList<String> lsLista;
     private javax.swing.JPanel pnPane1;
     private javax.swing.JPanel pnPaneTabla;
+    private javax.swing.JPopupMenu ppActCat;
+    private javax.swing.JMenuItem ppDos;
     private javax.swing.JMenuItem ppItem1;
     private javax.swing.JMenuItem ppItem2;
     private javax.swing.JPopupMenu ppMenuAct;
+    private javax.swing.JMenuItem ppUno;
     private javax.swing.JTable tbTabla;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables

@@ -38,6 +38,7 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         lblUno.setForeground(Color.BLACK);
         lblDos.setForeground(Color.BLACK);
         lblTres.setForeground(Color.BLACK);
+        lblCuatro.setForeground(Color.BLACK);
         //Botones
         btnCancelar.setForeground(Color.BLACK);
         btnOk.setForeground(Color.BLACK);
@@ -66,6 +67,9 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         btnOk = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        lblCuatro = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resbar v0.1 Agregar Productos");
@@ -87,9 +91,11 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         lblLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
 
         lblLogo2.setFont(new java.awt.Font("Forte", 0, 50)); // NOI18N
+        lblLogo2.setForeground(new java.awt.Color(0, 0, 0));
         lblLogo2.setText("Resbar");
 
         lblLogo3.setFont(new java.awt.Font("Forte", 0, 20)); // NOI18N
+        lblLogo3.setForeground(new java.awt.Color(0, 0, 0));
         lblLogo3.setText("Restaurante y Bar");
 
         lblUno.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -112,13 +118,15 @@ public class frmAgregarProductos extends javax.swing.JFrame {
         jTextField2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnOk.setBackground(new java.awt.Color(243, 153, 0));
+        btnOk.setBackground(new java.awt.Color(245, 168, 12));
         btnOk.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        btnOk.setForeground(new java.awt.Color(0, 0, 0));
         btnOk.setText("Ok");
         btnOk.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
 
         btnCancelar.setBackground(new java.awt.Color(245, 168, 12));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         btnCancelar.setMinimumSize(new java.awt.Dimension(134, 34));
@@ -128,6 +136,18 @@ public class frmAgregarProductos extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
+
+        lblCuatro.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblCuatro.setText("Enviar a:");
+
+        jComboBox2.setBackground(new java.awt.Color(0, 0, 0));
+        jComboBox2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jComboBox2.setForeground(new java.awt.Color(245, 168, 12));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cocina", "Bebida" }));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("$");
 
         javax.swing.GroupLayout pnFondoLayout = new javax.swing.GroupLayout(pnFondo);
         pnFondo.setLayout(pnFondoLayout);
@@ -143,22 +163,28 @@ public class frmAgregarProductos extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
             .addGroup(pnFondoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnFondoLayout.createSequentialGroup()
-                        .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDos, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUno)
-                            .addComponent(lblTres))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnFondoLayout.createSequentialGroup()
                             .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnFondoLayout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblDos, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblUno)
+                                .addGroup(pnFondoLayout.createSequentialGroup()
+                                    .addComponent(lblTres)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnFondoLayout.createSequentialGroup()
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblCuatro))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnFondoLayout.setVerticalGroup(
@@ -182,12 +208,17 @@ public class frmAgregarProductos extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTres)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 50, Short.MAX_VALUE))
+                    .addComponent(lblCuatro)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(pnFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,8 +294,11 @@ public class frmAgregarProductos extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnOk;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblCuatro;
     private javax.swing.JLabel lblDos;
     private javax.swing.JLabel lblLogo1;
     private javax.swing.JLabel lblLogo2;
