@@ -40,7 +40,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
          //COLOR LETRA de los label
         jLabelEncabezado1.setForeground(Color.BLACK);
         jLabelEncabezado2.setForeground(Color.BLACK);
-        jLabelLogo1.setForeground(Color.BLACK);
+    
         jLabelLogo2.setForeground(Color.BLACK);
         jLabelCategoria.setForeground(Color.WHITE);
         
@@ -158,7 +158,6 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabelLogo2 = new javax.swing.JLabel();
         jLabelEncabezado1 = new javax.swing.JLabel();
         jLabelEncabezado2 = new javax.swing.JLabel();
-        jLabelLogo1 = new javax.swing.JLabel();
         jPanelBotones = new javax.swing.JPanel();
         jLabelCategoria = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -168,6 +167,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDetalleOrden = new javax.swing.JTable();
+        jLabelCategoria1 = new javax.swing.JLabel();
 
         jppMenu.setBackground(new java.awt.Color(191, 169, 164));
 
@@ -244,16 +244,12 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jLabelEncabezado1.setFont(new java.awt.Font("Forte", 0, 70)); // NOI18N
         jLabelEncabezado1.setText("ResBar");
         jpnlMenus.add(jLabelEncabezado1);
-        jLabelEncabezado1.setBounds(400, 30, 220, 60);
+        jLabelEncabezado1.setBounds(650, 20, 220, 60);
 
         jLabelEncabezado2.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabelEncabezado2.setText("Restaurante & Bar");
         jpnlMenus.add(jLabelEncabezado2);
-        jLabelEncabezado2.setBounds(420, 100, 190, 30);
-
-        jLabelLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/logo_125x125.png"))); // NOI18N
-        jpnlMenus.add(jLabelLogo1);
-        jLabelLogo1.setBounds(30, 20, 110, 125);
+        jLabelEncabezado2.setBounds(670, 90, 190, 30);
 
         jPanelBotones.setBackground(new java.awt.Color(154, 119, 50));
         jPanelBotones.setLayout(null);
@@ -273,7 +269,7 @@ public class frmDetalleOrden extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jListCategoria);
 
         jPanelBotones.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 50, 230, 420);
+        jScrollPane2.setBounds(10, 50, 230, 430);
 
         jpnlMenus.add(jPanelBotones);
         jPanelBotones.setBounds(20, 170, 250, 480);
@@ -328,6 +324,11 @@ public class frmDetalleOrden extends javax.swing.JFrame {
 
         jpnlMenus.add(jPanelTabla);
         jPanelTabla.setBounds(280, 170, 720, 480);
+
+        jLabelCategoria1.setFont(new java.awt.Font("Forte", 0, 50)); // NOI18N
+        jLabelCategoria1.setText("Menú");
+        jpnlMenus.add(jLabelCategoria1);
+        jLabelCategoria1.setBounds(80, 40, 170, 70);
 
         javax.swing.GroupLayout jpnlPrincipalLayout = new javax.swing.GroupLayout(jpnlPrincipal);
         jpnlPrincipal.setLayout(jpnlPrincipalLayout);
@@ -441,9 +442,9 @@ public class frmDetalleOrden extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnOk;
     private javax.swing.JLabel jLabelCategoria;
+    private javax.swing.JLabel jLabelCategoria1;
     private javax.swing.JLabel jLabelEncabezado1;
     private javax.swing.JLabel jLabelEncabezado2;
-    private javax.swing.JLabel jLabelLogo1;
     private javax.swing.JLabel jLabelLogo2;
     private javax.swing.JList<String> jListCategoria;
     private javax.swing.JMenuItem jMenuItem1;

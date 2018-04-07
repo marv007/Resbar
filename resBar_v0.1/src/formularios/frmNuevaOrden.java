@@ -220,7 +220,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
                 btnEnviarOrdenActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEnviarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 111, -1));
+        jPanel1.add(btnEnviarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 210, 111, -1));
 
         lblFecha.setFont(lblFecha.getFont().deriveFont(lblFecha.getFont().getSize()+9f));
         lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -229,7 +229,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
 
         jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getStyle() | java.awt.Font.BOLD, jLabel1.getFont().getSize()+9));
         jLabel1.setText("Mesa:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 140, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
         lblHora.setFont(lblHora.getFont().deriveFont(lblHora.getFont().getSize()+9f));
         lblHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -238,14 +238,14 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
 
         jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getStyle() | java.awt.Font.BOLD, jLabel2.getFont().getSize()+9));
         jLabel2.setText("Mesero:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 248, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, -1, -1));
 
         jLabel3.setFont(jLabel3.getFont().deriveFont(jLabel3.getFont().getStyle() | java.awt.Font.BOLD, jLabel3.getFont().getSize()+9));
         jLabel3.setText("Cliente:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 194, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         txtMesa.setFont(txtMesa.getFont().deriveFont(txtMesa.getFont().getSize()+9f));
-        jPanel1.add(txtMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 137, 160, 30));
+        jPanel1.add(txtMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 160, 30));
 
         txtMesero.setFont(txtMesero.getFont().deriveFont(txtMesero.getFont().getSize()+9f));
         txtMesero.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -253,7 +253,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
                 txtMeseroKeyTyped(evt);
             }
         });
-        jPanel1.add(txtMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 245, 320, 30));
+        jPanel1.add(txtMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 310, 30));
 
         txtCliente.setFont(txtCliente.getFont().deriveFont(txtCliente.getFont().getSize()+9f));
         txtCliente.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -261,7 +261,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
                 txtClienteKeyTyped(evt);
             }
         });
-        jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 194, 320, 30));
+        jPanel1.add(txtCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 320, 30));
 
         tblDetalle.setBackground(new java.awt.Color(248, 227, 128));
         tblDetalle.setFont(tblDetalle.getFont().deriveFont(tblDetalle.getFont().getSize()+9f));
@@ -297,7 +297,7 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
         });
         jScrollPane1.setViewportView(tblDetalle);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 328, 620, 370));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 620, 370));
 
         btnAgregarProductos.setBackground(new java.awt.Color(245, 168, 12));
         btnAgregarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plus.png"))); // NOI18N
@@ -309,32 +309,32 @@ public class frmNuevaOrden extends javax.swing.JFrame implements Runnable{
                 btnAgregarProductosActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, -1, -1));
+        jPanel1.add(btnAgregarProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, -1, -1));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo_116x116.png"))); // NOI18N
-        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 0, -1, -1));
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Forte", 0, 60)); // NOI18N
         jLabel4.setText("Resbar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 0, -1, 53));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 53));
 
         jLabel5.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel5.setText("Detalle Orden");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 294, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Forte", 0, 24)); // NOI18N
         jLabel6.setText("Restaurante & Bar");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 69, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 320, 300));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 320, 370));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel7.setText("Comentarios");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 294, 146, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 146, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 780));
 

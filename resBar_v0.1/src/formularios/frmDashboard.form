@@ -139,7 +139,7 @@
                 <Font bold="true" component="Categorias" property="font" relativeSize="true" size="9"/>
               </FontInfo>
             </Property>
-            <Property name="text" type="java.lang.String" value="Categorias"/>
+            <Property name="text" type="java.lang.String" value="Categorias Men&#xfa;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CategoriasActionPerformed"/>

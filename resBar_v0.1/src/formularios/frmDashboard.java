@@ -159,7 +159,7 @@ public class frmDashboard extends javax.swing.JFrame {
         jppMenu.add(Cobrar);
 
         Categorias.setFont(Categorias.getFont().deriveFont(Categorias.getFont().getStyle() | java.awt.Font.BOLD, Categorias.getFont().getSize()+9));
-        Categorias.setText("Categorias");
+        Categorias.setText("Categorias Menú");
         Categorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CategoriasActionPerformed(evt);
@@ -410,6 +410,7 @@ public class frmDashboard extends javax.swing.JFrame {
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
         jppMenu.setVisible(false);
+        jppAdmin.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseEntered
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -448,7 +449,10 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_tblOrdenesMouseClicked
 
     private void AgregarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPActionPerformed
-        // TODO add your handling code here:
+        frmDetalleOrden v = new frmDetalleOrden();
+        v.setVisible(true);
+        this.dispose();
+        jppMenu.setVisible(false);
     }//GEN-LAST:event_AgregarPActionPerformed
 
     private void CobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CobrarActionPerformed
