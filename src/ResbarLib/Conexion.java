@@ -1,4 +1,4 @@
-package Libresbar;
+package ResbarLib;
 
 //Recuerden importar la biblioteca de conexión :v
 import java.sql.Connection;
@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
 public class Conexion {
     
     private String url = "jdbc:mysql://localhost:3306/ResBar";
-    private String login = "resbar"; //Administrador de MySQL
-    private String password = "Restaurante2018";
+    private String login = "root"; //Administrador de MySQL
+    private String password = null;
     private Connection cnx = null;
     private Statement sttm = null;
     private ResultSet rst = null;

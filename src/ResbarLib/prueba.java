@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-package Libresbar;
+package ResbarLib;
 
 /**
  *
  * @author user
  */
-public class Categoria {
+public class prueba {
 
-    int idCategoria;
-    String nombre;
-    Producto[] productos;
+    ManejadorCategorias m = new ManejadorCategorias();
+    
+    
 }

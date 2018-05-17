@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Libresbar;
+package ResbarLib;
 
 
 
@@ -12,7 +12,7 @@ package Libresbar;
  *
  * @author Marvin
  */
-public class Ordenes {
+public class Orden {
 
     int IdOrden;
     String mesero, mesa, cliente, comentario;
